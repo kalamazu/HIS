@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@UI.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Label layoutX="193.0" layoutY="14.0" prefHeight="63.0" prefWidth="215.0" text="东软云医院HIS系统" textFill="#ff6161" AnchorPane.topAnchor="14.0">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="charge" layoutX="93.0" layoutY="119.0" mnemonicParsing="false" onAction="#openChargeWindows" prefHeight="43.0" prefWidth="100.0" text="挂号收费" />
+            <Button layoutX="408.0" layoutY="125.0" mnemonicParsing="false" onAction="#openPatienceWindows" prefHeight="43.0" prefWidth="100.0" text="看诊病例" />
+            <Button layoutX="93.0" layoutY="248.0" mnemonicParsing="false" onAction="#openMedicineWindows" prefHeight="43.0" prefWidth="100.0" text="药房发药" />
+            <Button fx:id="logout" layoutX="408.0" layoutY="248.0" mnemonicParsing="false" onAction="#logOut" prefHeight="43.0" prefWidth="100.0" text="退出登录" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
