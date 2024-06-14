@@ -4,11 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.liyang.player</groupId>
-  <artifactId>player_1</artifactId>
+  <groupId>com.hos</groupId>
+  <artifactId>HIS</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>player_1</name>
+  <name>HIS</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -27,8 +27,6 @@
       <version>17.0.6</version>
     </dependency>
 
-
-
     <dependency>
 
       <groupId>org.openjfx</groupId>
@@ -36,21 +34,13 @@
       <version>17.0.6</version>
     </dependency>
 
-
-
-
-
-
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <version>1.18.20</version>
     </dependency>
 
-
-
   </dependencies>
-
 
   <repositories>
     <repository>
@@ -105,20 +95,4 @@
     </pluginManagement>
   </build>
 
-
-  <dependencyManagement>
-
-
-    <dependencies>
-
-
-      <dependency>
-        <groupId>org.openjfx</groupId>
-        <artifactId>javafx-base</artifactId>
-        <version>21</version>
-      </dependency>
-
-    </dependencies>
-
-  </dependencyManagement>
 </project>
