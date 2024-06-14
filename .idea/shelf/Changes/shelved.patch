@@ -1,0 +1,237 @@
+Index: src/main/java/com/hos/gui/controller/ControllerOption.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.hos.gui.controller;\r\n\r\nimport com.hos.gui.HelloApplication;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Node;\r\nimport javafx.scene.Parent;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.Button;\r\nimport javafx.scene.layout.StackPane;\r\nimport javafx.stage.Stage;\r\nimport javafx.stage.StageStyle;\r\n\r\nimport java.io.IOException;\r\n\r\npublic class ControllerOption {\r\n@FXML\r\n    private Button charge;\r\n@FXML\r\n    private Button logout;\r\n@FXML\r\n    private void openChargeWindows(){\r\n    try {\r\n        FXMLLoader loader = new FXMLLoader(getClass().getResource(\"/com/hos/gui/Charge.fxml\"));\r\n        ControllerCharge controller=new ControllerCharge();\r\n        loader.setController(controller);\r\n        StackPane root = loader.load();\r\n        Scene secondWindowScene = new Scene(root);\r\n\r\n        Stage secondWindowStage = new Stage();\r\n        secondWindowStage.setScene(secondWindowScene);\r\n        secondWindowStage.initStyle(StageStyle.UNDECORATED);\r\n        secondWindowStage.show();\r\n\r\n\r\n    } catch (IOException e) {\r\n        e.printStackTrace();\r\n\r\n    }\r\n}\r\n    @FXML\r\n    private void openPatienceWindows(){\r\n        try {\r\n            FXMLLoader loader = new FXMLLoader(getClass().getResource(\"/com/hos/gui/Patiences.fxml\"));\r\n            ControllerPatience controller=new ControllerPatience();\r\n            loader.setController(controller);\r\n            StackPane root = loader.load();\r\n            Scene secondWindowScene = new Scene(root);\r\n\r\n            Stage secondWindowStage = new Stage();\r\n            secondWindowStage.setScene(secondWindowScene);\r\n            secondWindowStage.initStyle(StageStyle.UNDECORATED);\r\n            secondWindowStage.show();\r\n\r\n\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n\r\n        }\r\n    }\r\n    @FXML\r\n    private void openMedicineWindows(){\r\n        try {\r\n            FXMLLoader loader = new FXMLLoader(getClass().getResource(\"/com/hos/gui/Medicine.fxml\"));\r\n            ControllerPatience controller=new ControllerPatience();\r\n            loader.setController(controller);\r\n            StackPane root = loader.load();\r\n            Scene secondWindowScene = new Scene(root);\r\n\r\n            Stage secondWindowStage = new Stage();\r\n            secondWindowStage.setScene(secondWindowScene);\r\n            secondWindowStage.initStyle(StageStyle.UNDECORATED);\r\n            secondWindowStage.show();\r\n\r\n\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n\r\n        }\r\n    }\r\n    @FXML\r\n    private void logOut(){\r\n        try {\r\n            FXMLLoader loader = new FXMLLoader(getClass().getResource(\"/com/hos/gui/Login.fxml\"));\r\n            Controller controller=new Controller();\r\n            loader.setController(controller);\r\n            StackPane root = loader.load();\r\n            Scene secondWindowScene = new Scene(root);\r\n\r\n            Stage secondWindowStage = new Stage();\r\n            secondWindowStage.setScene(secondWindowScene);\r\n            secondWindowStage.initStyle(StageStyle.UNDECORATED);\r\n            secondWindowStage.show();\r\n\r\n            Stage stage = (Stage) logout.getScene().getWindow();\r\n            stage.close();\r\n\r\n\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n\r\n        }\r\n    }\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/hos/gui/controller/ControllerOption.java b/src/main/java/com/hos/gui/controller/ControllerOption.java
+--- a/src/main/java/com/hos/gui/controller/ControllerOption.java	(revision 5707d6f435a6e1fa3cac82e9c27bd7023bfd1168)
++++ b/src/main/java/com/hos/gui/controller/ControllerOption.java	(date 1718291539165)
+@@ -80,6 +80,8 @@
+     }
+     @FXML
+     private void logOut(){
++
++
+         try {
+             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/hos/gui/Login.fxml"));
+             Controller controller=new Controller();
+@@ -103,4 +105,7 @@
+     }
+ 
+ 
++
++
++
+ }
+Index: src/main/java/module-info.java
+===================================================================
+diff --git a/src/main/java/module-info.java b/src/main/java/module-info.java
+deleted file mode 100644
+--- a/src/main/java/module-info.java	(revision 5707d6f435a6e1fa3cac82e9c27bd7023bfd1168)
++++ /dev/null	(revision 5707d6f435a6e1fa3cac82e9c27bd7023bfd1168)
+@@ -1,10 +0,0 @@
+-module com.hos.gui {
+-    requires javafx.controls;
+-    requires javafx.fxml;
+-
+-    requires org.controlsfx.controls;
+-
+-    opens com.hos.gui to javafx.fxml;
+-    opens com.hos.gui.controller to javafx.fxml;
+-    exports com.hos.gui;
+-}
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" default=\"true\" project-jdk-name=\"17\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 5707d6f435a6e1fa3cac82e9c27bd7023bfd1168)
++++ b/.idea/misc.xml	(date 1718290844927)
+@@ -8,7 +8,7 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17 (2)" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/main/java/com/hos/gui/service/login.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/hos/gui/service/login.java b/src/main/java/com/hos/gui/service/login.java
+new file mode 100644
+--- /dev/null	(date 1718291539177)
++++ b/src/main/java/com/hos/gui/service/login.java	(date 1718291539177)
+@@ -0,0 +1,12 @@
++package com.hos.gui.service;
++
++/**
++ * @Title: login
++ * @Author itmei
++ * @Package com.hos.gui.service
++ * @Date 2024/6/13 23:10
++ * @description: login
++ */
++public class login {
++
++}
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"83e45e2d-6daf-4fb3-8b02-ab5e2772663b\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/.gitignore\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/encodings.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/uiDesigner.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/vcs.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/mvnw\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/mvnw.cmd\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/pom.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/hos/gui/HelloApplication.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/hos/gui/controller/Controller.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/hos/gui/controller/ControllerCharge.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/hos/gui/controller/ControllerMedicine.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/hos/gui/controller/ControllerOption.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/hos/gui/controller/ControllerPatience.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/module-info.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/com/hos/gui/Charge.fxml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/com/hos/gui/Login.fxml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/com/hos/gui/Main.fxml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/com/hos/gui/Medicine.fxml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/com/hos/gui/Patiences.fxml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/com/hos/gui/UI.css\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHomeTypeForPersistence\" value=\"WRAPPER\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\"><![CDATA[{\r\n  \"associatedIndex\": 0\r\n}]]></component>\r\n  <component name=\"ProjectId\" id=\"2hopPZz49hE54UjnflFPFA19rgS\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"ASKED_ADD_EXTERNAL_FILES\": \"true\",\r\n    \"Application.HelloApplication.executor\": \"Run\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"git-widget-placeholder\": \"master\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"settings.editor.selected.configurable\": \"terminal\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"HelloApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.hos.gui.HelloApplication\" />\r\n      <module name=\"GUI\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.hos.gui.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.HelloApplication\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"83e45e2d-6daf-4fb3-8b02-ab5e2772663b\" name=\"Changes\" comment=\"\" />\r\n      <created>1718270262006</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1718270262006</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 5707d6f435a6e1fa3cac82e9c27bd7023bfd1168)
++++ b/.idea/workspace.xml	(date 1718332648151)
+@@ -5,30 +5,11 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="83e45e2d-6daf-4fb3-8b02-ab5e2772663b" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hos/gui/HelloApplication.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hos/gui/controller/Controller.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hos/gui/controller/ControllerCharge.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hos/gui/controller/ControllerMedicine.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hos/gui/controller/ControllerOption.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hos/gui/controller/ControllerPatience.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/hos/gui/Charge.fxml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/hos/gui/Login.fxml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/hos/gui/Main.fxml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/hos/gui/Medicine.fxml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/hos/gui/Patiences.fxml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/hos/gui/UI.css" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/com/hos/gui/service/login.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/hos/gui/controller/ControllerOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hos/gui/controller/ControllerOption.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -49,13 +30,15 @@
+   <component name="MavenImportPreferences">
+     <option name="generalSettings">
+       <MavenGeneralSettings>
+-        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
++        <option name="customMavenHome" value="D:\maven\apache-maven-3.9.6" />
++        <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
++        <option name="userSettingsFile" value="C:\Users\CRYXC\.m2\settings.xml" />
+       </MavenGeneralSettings>
+     </option>
+   </component>
+-  <component name="ProjectColorInfo"><![CDATA[{
+-  "associatedIndex": 0
+-}]]></component>
++  <component name="ProjectColorInfo">{
++  &quot;associatedIndex&quot;: 0
++}</component>
+   <component name="ProjectId" id="2hopPZz49hE54UjnflFPFA19rgS" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+     <ConfirmationsSetting value="2" id="Add" />
+@@ -64,21 +47,34 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "ASKED_ADD_EXTERNAL_FILES": "true",
+-    "Application.HelloApplication.executor": "Run",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "git-widget-placeholder": "master",
+-    "kotlin-language-version-configured": "true",
+-    "settings.editor.selected.configurable": "terminal"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
++    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
++    &quot;Maven.player_1 [clean].executor&quot;: &quot;Run&quot;,
++    &quot;Maven.player_1 [org.apache.maven.plugins:maven-clean-plugin:3.1.0:clean].executor&quot;: &quot;Run&quot;,
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
++    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
++    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RunManager">
+     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="com.hos.gui.HelloApplication" />
+-      <module name="GUI" />
++      <module name="player_1" />
+       <extension name="coverage">
+         <pattern>
+           <option name="PATTERN" value="com.hos.gui.*" />
+@@ -94,6 +90,15 @@
+         <item itemvalue="Application.HelloApplication" />
+       </list>
+     </recent_temporary>
++  </component>
++  <component name="SharedIndexes">
++    <attachedChunks>
++      <set>
++        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
++        <option value="jdk-17.0.10-graalvm-jdk-17.0.10-4caba194b151-6d8b2ca1" />
++        <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
++      </set>
++    </attachedChunks>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+@@ -103,10 +108,20 @@
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+       <updated>1718270262006</updated>
++      <workItem from="1718289135776" duration="904000" />
++      <workItem from="1718290071281" duration="1465000" />
++      <workItem from="1718331840091" duration="679000" />
+     </task>
+     <servers />
+   </component>
++  <component name="TypeScriptGeneratedFilesManager">
++    <option name="version" value="3" />
++  </component>
+   <component name="VcsManagerConfiguration">
+     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+   </component>
++  <component name="XSLT-Support.FileAssociations.UIState">
++    <expand />
++    <select />
++  </component>
+ </project>
+\ No newline at end of file
