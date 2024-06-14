@@ -18,12 +18,12 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="42.0" layoutY="99.0" prefHeight="28.0" prefWidth="57.0" text="病历号：" textFill="#8fa192">
+            <Label layoutX="42.0" layoutY="99.0" prefHeight="28.0" prefWidth="57.0" text="病例号：" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="171.0" layoutY="282.0" prefHeight="28.0" prefWidth="71.0" text="患者姓名：" textFill="#8fa192">
+            <Label layoutX="171.0" layoutY="282.0" prefHeight="28.0" prefWidth="71.0" text="看诊医生：" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
@@ -49,7 +49,7 @@
                </font>
             </Label>
             <Separator layoutY="185.0" prefHeight="6.0" prefWidth="600.0" />
-            <Label layoutX="39.0" layoutY="282.0" prefHeight="28.0" prefWidth="71.0" text="患者姓名：" textFill="#8fa192">
+            <Label layoutX="39.0" layoutY="282.0" prefHeight="28.0" prefWidth="71.0" text="看诊科室：" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
@@ -59,14 +59,14 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="100.0" layoutY="97.0" />
-            <Button layoutX="322.0" layoutY="96.0" mnemonicParsing="false" text="查询" />
-            <Label layoutX="315.0" layoutY="282.0" prefHeight="28.0" prefWidth="71.0" text="患者姓名：" textFill="#8fa192">
+            <TextField fx:id="PatienceNumber" layoutX="100.0" layoutY="97.0" />
+            <Button fx:id="Check" layoutX="322.0" layoutY="96.0" mnemonicParsing="false" text="查询" />
+            <Label layoutX="315.0" layoutY="282.0" prefHeight="28.0" prefWidth="71.0" text="看诊级别：" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="444.0" layoutY="282.0" prefHeight="28.0" prefWidth="71.0" text="患者姓名：" textFill="#8fa192">
+            <Label layoutX="444.0" layoutY="282.0" prefHeight="28.0" prefWidth="71.0" text="看诊时间：" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
@@ -81,30 +81,70 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="104.0" layoutY="336.0" prefHeight="150.0" prefWidth="510.0" />
-            <TextField layoutX="104.0" layoutY="501.0" prefHeight="150.0" prefWidth="510.0" />
+            <TextField fx:id="MedicalCertificate" layoutX="104.0" layoutY="336.0" prefHeight="150.0" prefWidth="510.0" />
+            <TextField fx:id="MedicineList" layoutX="104.0" layoutY="501.0" prefHeight="150.0" prefWidth="510.0" />
             <Label layoutX="42.0" layoutY="672.0" prefHeight="28.0" prefWidth="71.0" text="药品总价：" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="113.0" layoutY="670.0" prefHeight="32.0" prefWidth="78.0" />
+            <TextField fx:id="TotalFee" layoutX="113.0" layoutY="670.0" prefHeight="32.0" prefWidth="78.0" />
             <Label layoutX="191.0" layoutY="672.0" prefHeight="28.0" prefWidth="57.0" text="元" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Button layoutX="497.0" layoutY="669.0" mnemonicParsing="false" text="保存" />
-            <AnchorPane layoutX="-2.0" prefHeight="50.0" prefWidth="620.0" style="-fx-background-color: gray;" AnchorPane.topAnchor="0.0">
+            <Button fx:id="Save" layoutX="497.0" layoutY="669.0" mnemonicParsing="false" text="保存" />
+            <AnchorPane fx:id="Pane" layoutX="-2.0" onMouseDragged="#onMouseDraggedForMove" onMousePressed="#onMousePressedForMove" prefHeight="50.0" prefWidth="620.0" style="-fx-background-color: gray;" AnchorPane.topAnchor="0.0">
                <children>
                   <Label layoutX="14.0" prefHeight="40.0" prefWidth="90.0" text="看诊病例" textFill="#ff6161">
                      <font>
                         <Font name="System Bold" size="22.0" />
                      </font>
                   </Label>
-                  <Button layoutX="558.0" layoutY="3.0" mnemonicParsing="false" text="关闭" />
+                  <Button layoutX="558.0" layoutY="3.0" mnemonicParsing="false" onAction="#Close" text="关闭" />
                </children>
             </AnchorPane>
+            <Label fx:id="Name" layoutX="109.0" layoutY="143.0" prefHeight="19.0" prefWidth="63.0" textFill="RED">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="Age" layoutX="235.0" layoutY="143.0" prefHeight="19.0" prefWidth="27.0" textFill="RED">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="Gender" layoutX="337.0" layoutY="143.0" prefHeight="19.0" prefWidth="27.0" textFill="RED">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="IDNumber" layoutX="463.0" layoutY="143.0" prefHeight="19.0" prefWidth="155.0" textFill="RED">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="Room" layoutX="104.0" layoutY="287.0" prefHeight="19.0" prefWidth="56.0" textFill="RED">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="Doctor" layoutX="235.0" layoutY="287.0" prefHeight="19.0" prefWidth="63.0" textFill="RED">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="Level" layoutX="378.0" layoutY="287.0" prefHeight="19.0" prefWidth="42.0" textFill="RED">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="Time" layoutX="510.0" layoutY="290.0" prefHeight="19.0" prefWidth="90.0" textFill="RED">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>
