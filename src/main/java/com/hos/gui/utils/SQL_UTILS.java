@@ -1,5 +1,6 @@
 package com.hos.gui.utils;
 
+import com.hos.gui.entity.Doctor;
 import com.hos.gui.entity.Patient;
 
 import java.sql.*;
@@ -78,6 +79,38 @@ public class SQL_UTILS {
         }
     }
 
+
+    /**
+     * 添加病人
+     */
+    public void createPatient(Patient patient) {
+        try {
+            String sql = "INSERT INTO patient (realname, gender, cardnumber, birthdate, age, homeaddress, deptname, doctorname, registlevel, isbook, registfee, registdate, diagiosis, prescription, drugprice, visitstate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, patient.getRealname());
+            pstmt.setString(2, patient.getGender());
+            pstmt.setString(3, patient.getCardnumber());
+            pstmt.setString(4, patient.getBirthdate());
+            pstmt.setInt(5, patient.getAge());
+            pstmt.setString(6, patient.getHomeaddress());
+            pstmt.setString(7, patient.getDeptname());
+            pstmt.setString(8, patient.getDoctorname());
+            pstmt.setString(9, patient.getRegistlevel());
+            pstmt.setString(10, patient.getIsbook());
+            pstmt.setDouble(11, patient.getRegistfee());
+            pstmt.setString(12, patient.getRegistdate());
+            pstmt.setString(13, patient.getDiagiosis());
+            pstmt.setString(14, patient.getPrescription());
+            pstmt.setDouble(15, patient.getDrugprice());
+            pstmt.setInt(16, patient.getVisitstate());
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+
     /**
      * 病人查询
      * @param patientName
@@ -92,7 +125,7 @@ public class SQL_UTILS {
             if (rs.next()) {
                 Patient patient = new Patient();
 
-                patient.setId(Integer.parseInt(rs.getString("id")));
+/*                patient.setId(Integer.parseInt(rs.getString("id")));
                 patient.setRealname(rs.getString("realname"));
                 patient.setGender(rs.getString("gender"));
                 patient.setAge(rs.getInt("age"));
@@ -101,7 +134,28 @@ public class SQL_UTILS {
                 patient.setDeptname(rs.getString("deptname"));
                 patient.setDoctorname(rs.getString("doctorname"));
                 patient.setCardnumber(rs.getString("registlevel"));
-                patient.setCardnumber(rs.getString("registdate"));
+                patient.setCardnumber(rs.getString("registdate"));*/
+
+
+
+                patient.setId(rs.getInt("id"));
+                patient.setRealname(rs.getString("realname"));
+                patient.setGender(rs.getString("gender"));
+                patient.setCardnumber(rs.getString("cardnumber"));
+                patient.setBirthdate(rs.getString("birthdate"));
+                patient.setAge(rs.getInt("age"));
+                patient.setHomeaddress(rs.getString("homeaddress"));
+                patient.setDeptname(rs.getString("deptname"));
+                patient.setDoctorname(rs.getString("doctorname"));
+                patient.setRegistlevel(rs.getString("registlevel"));
+                patient.setIsbook(rs.getString("isbook"));
+                patient.setRegistfee(rs.getDouble("registfee"));
+                patient.setRegistdate(rs.getString("registdate"));
+                patient.setDiagiosis(rs.getString("diagiosis"));
+                patient.setPrescription(rs.getString("prescription"));
+                patient.setDrugprice(rs.getDouble("drugprice"));
+                patient.setVisitstate(rs.getInt("visitstate"));
+
                 return patient;
             } else {
                 return null;
@@ -110,6 +164,103 @@ public class SQL_UTILS {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     * 改
+     * @param patient
+     */
+    public void updatePatient(Patient patient) {
+        try {
+            String sql = "UPDATE patient SET realname = ?, gender = ?, cardnumber = ?, birthdate = ?, age = ?, homeaddress = ?, deptname = ?, doctorname = ?, registlevel = ?, isbook = ?, registfee = ?, registdate = ?, diagiosis = ?, prescription = ?, drugprice = ?, visitstate = ? WHERE id = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, patient.getRealname());
+            pstmt.setString(2, patient.getGender());
+            pstmt.setString(3, patient.getCardnumber());
+            pstmt.setString(4, patient.getBirthdate());
+            pstmt.setInt(5, patient.getAge());
+            pstmt.setString(6, patient.getHomeaddress());
+            pstmt.setString(7, patient.getDeptname());
+            pstmt.setString(8, patient.getDoctorname());
+            pstmt.setString(9, patient.getRegistlevel());
+            pstmt.setString(10, patient.getIsbook());
+            pstmt.setDouble(11, patient.getRegistfee());
+            pstmt.setString(12, patient.getRegistdate());
+            pstmt.setString(13, patient.getDiagiosis());
+            pstmt.setString(14, patient.getPrescription());
+            pstmt.setDouble(15, patient.getDrugprice());
+            pstmt.setInt(16, patient.getVisitstate());
+            pstmt.setInt(17, patient.getId());
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * 删
+     * @param id
+     */
+
+    public void deletePatientById(int id) {
+        try {
+            String sql = "DELETE FROM patient WHERE id = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, id);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * 更新医生信息
+     * @param doctor
+     */
+    public void updateDoctor(Doctor doctor) {
+        try {
+            String sql = "UPDATE doctor SET realname = ?, password = ?, deptname = ?, registlevel = ?, registfee = ? WHERE id = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, doctor.getRealname());
+            pstmt.setString(2, doctor.getPassword());
+            pstmt.setString(3, doctor.getDeptname());
+            pstmt.setString(4, doctor.getRegistlevel());
+            pstmt.setDouble(5, doctor.getRegistfee());
+            pstmt.setString(6, doctor.getId());
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * 查找医生
+     * @param id
+     * @return
+     */
+    public Doctor getDoctorById(String id) {
+        try {
+            String sql = "SELECT * FROM doctor WHERE id = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, id);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                Doctor doctor = new Doctor();
+                doctor.setId(rs.getString("id"));
+                doctor.setRealname(rs.getString("realname"));
+                doctor.setPassword(rs.getString("password"));
+                doctor.setDeptname(rs.getString("deptname"));
+                doctor.setRegistlevel(rs.getString("registlevel"));
+                doctor.setRegistfee(rs.getDouble("registfee"));
+                return doctor;
+            } else {
+                return null;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
 
     /*public boolean patientLogin(String patientID,String patientPwd){
 
@@ -198,38 +349,6 @@ public class SQL_UTILS {
         }
     }
 
-    public boolean delUserByUserName(String userName) {
-        try {
-            String sql = "DELETE FROM usertable WHERE username = ?";
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, userName);
-            pstmt.executeUpdate();
-            System.out.println("删除用户成功！");
-            return true;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public boolean modifyUser(Patient newPatient) {
-        try {
-            String sql = "UPDATE usertable SET username = ?, password = ?, role = ? WHERE id = ?";
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-
-            pstmt.setString(1, newPatient.getUserName());
-            pstmt.setString(2, newPatient.get());
-            pstmt.setInt(4, newPatient.getId());
-            pstmt.executeUpdate();
-            System.out.println("修改用户成功！");
-            return true;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }*/
-
-
-
-    //查询根据业务添加
-
+ */
 
 }
