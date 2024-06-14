@@ -29,6 +29,7 @@ public class test {
     public static void main(String[] args) {
         Patient patient = SQL_UTILS.getInstance().getUserByUserName("李四");
         System.out.println(patient);
+
     }
 
 }

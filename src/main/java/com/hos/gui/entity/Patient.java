@@ -14,7 +14,6 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-
 public class Patient {
     private Integer id;			//病例号
     private String realname;		//患者姓名
