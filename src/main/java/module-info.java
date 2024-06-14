@@ -1,6 +1,7 @@
 module com.hos.gui {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
 
 
     opens com.hos.gui to javafx.fxml;
