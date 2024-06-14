@@ -61,7 +61,7 @@ private Button logout;
     private void openMedicineWindows(){
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/hos/gui/Medicine.fxml"));
-            ControllerPatience controller=new ControllerPatience();
+            ControllerMedicine controller=new ControllerMedicine();
             loader.setController(controller);
             StackPane root = loader.load();
             Scene secondWindowScene = new Scene(root);

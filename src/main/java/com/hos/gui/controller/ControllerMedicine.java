@@ -3,10 +3,7 @@ package com.hos.gui.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -26,8 +23,10 @@ public class ControllerMedicine {
     @FXML
     private Label IDNumber;
 
+
     @FXML
-    private TableView<?> MedicineDetail;
+    private TextField MedicineDetail;
+
 
     @FXML
     private Label Name;
