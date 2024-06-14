@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83e45e2d-6daf-4fb3-8b02-ab5e2772663b" name="Changes" comment="Test sql connection successfully">
+    <list default="true" id="83e45e2d-6daf-4fb3-8b02-ab5e2772663b" name="Changes" comment="add lombok and junit tools,&#10;add manager sql">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hos/gui/Test/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hos/gui/Test/test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hos/gui/utils/SQL_UTILS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hos/gui/utils/SQL_UTILS.java" afterDir="false" />
     </list>
@@ -61,11 +63,11 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "MavenSettings",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.test.testSQLconnection">
+  <component name="RunManager" selected="Application.test">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.hos.gui.HelloApplication" />
       <module name="player_1" />
@@ -110,8 +112,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.test.testSQLconnection" />
         <item itemvalue="Application.test" />
+        <item itemvalue="JUnit.test.testSQLconnection" />
         <item itemvalue="Application.HelloApplication" />
       </list>
     </recent_temporary>
@@ -125,7 +127,7 @@
       <option name="presentableId" value="Default" />
       <updated>1718270262006</updated>
       <workItem from="1718333407670" duration="1039000" />
-      <workItem from="1718363370246" duration="5429000" />
+      <workItem from="1718363370246" duration="1460000" />
     </task>
     <task id="LOCAL-00001" summary="add lombok and junit tools,&#10;add manager sql">
       <option name="closed" value="true" />
@@ -135,44 +137,16 @@
       <option name="project" value="LOCAL" />
       <updated>1718342959145</updated>
     </task>
-    <task id="LOCAL-00002" summary="Test sql connection successfully">
-      <option name="closed" value="true" />
-      <created>1718364884408</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1718364884408</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Test sql connection successfully">
-      <option name="closed" value="true" />
-      <created>1718367709109</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1718367709109</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="add lombok and junit tools,&#10;add manager sql" />
-    <MESSAGE value="Test sql connection successfully" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test sql connection successfully" />
+    <option name="LAST_COMMIT_MESSAGE" value="add lombok and junit tools,&#10;add manager sql" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
