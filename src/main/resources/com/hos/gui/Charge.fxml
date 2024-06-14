@@ -41,11 +41,11 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField layoutX="82.0" layoutY="80.0" prefHeight="32.0" prefWidth="187.0" />
-            <TextField layoutX="82.0" layoutY="122.0" prefHeight="32.0" prefWidth="187.0" />
-            <TextField layoutX="82.0" layoutY="165.0" prefHeight="32.0" prefWidth="57.0" />
-            <TextField layoutX="82.0" layoutY="215.0" prefHeight="32.0" prefWidth="274.0" />
-            <TextField layoutX="82.0" layoutY="268.0" prefHeight="32.0" prefWidth="274.0" />
+            <TextField fx:id="PatienceNumber" layoutX="82.0" layoutY="80.0" prefHeight="32.0" prefWidth="187.0" />
+            <TextField fx:id="Name" layoutX="82.0" layoutY="122.0" prefHeight="32.0" prefWidth="187.0" />
+            <TextField fx:id="Age" layoutX="82.0" layoutY="165.0" prefHeight="32.0" prefWidth="57.0" />
+            <TextField fx:id="IdNumber" layoutX="82.0" layoutY="215.0" prefHeight="32.0" prefWidth="274.0" />
+            <TextField fx:id="HomeAddress" layoutX="82.0" layoutY="268.0" prefHeight="32.0" prefWidth="274.0" />
             <Label layoutX="47.0" layoutY="336.0" prefHeight="28.0" prefWidth="90.0" text="挂号信息" textFill="#75ff8c">
                <font>
                   <Font size="18.0" />
@@ -56,14 +56,14 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <RadioButton layoutX="367.0" layoutY="130.0" mnemonicParsing="false" text="男" textFill="#8fa192" />
-            <RadioButton layoutX="421.0" layoutY="130.0" mnemonicParsing="false" text="女" textFill="#8fa192" />
+            <RadioButton fx:id="GenderMale" layoutX="367.0" layoutY="130.0" mnemonicParsing="false" text="男" textFill="#8fa192" />
+            <RadioButton fx:id="GenderFemale" layoutX="421.0" layoutY="130.0" mnemonicParsing="false" text="女" textFill="#8fa192" />
             <Label layoutX="319.0" layoutY="167.0" prefHeight="28.0" prefWidth="72.0" text="出生年月：" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <DatePicker layoutX="391.0" layoutY="165.0" />
+            <DatePicker fx:id="BirthDate" layoutX="391.0" layoutY="165.0" />
             <Label layoutX="665.0" layoutY="40.0" prefHeight="28.0" prefWidth="78.0" text="收费" textFill="#75ff8c">
                <font>
                   <Font size="18.0" />
@@ -89,23 +89,23 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="730.0" layoutY="89.0" prefHeight="28.0" prefWidth="57.0" text="0" textFill="#8fa192">
+            <Label fx:id="ShouldCharge" layoutX="730.0" layoutY="89.0" prefHeight="28.0" prefWidth="57.0" text="0" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="729.0" layoutY="138.0" prefHeight="32.0" prefWidth="107.0" />
+            <TextField fx:id="ActuallyCharge" layoutX="729.0" layoutY="138.0" prefHeight="32.0" prefWidth="107.0" />
             <Label layoutX="843.0" layoutY="140.0" prefHeight="28.0" prefWidth="33.0" text="元" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="718.0" layoutY="182.0" prefHeight="28.0" prefWidth="57.0" text="无" textFill="#8fa192">
+            <Label fx:id="Change" layoutX="718.0" layoutY="182.0" prefHeight="28.0" prefWidth="57.0" text="无" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="718.0" layoutY="231.0" prefHeight="28.0" prefWidth="57.0" text="admin" textFill="#8fa192">
+            <Label fx:id="Charger" layoutX="718.0" layoutY="231.0" prefHeight="28.0" prefWidth="57.0" text="admin" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
@@ -115,7 +115,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="14.0" layoutY="82.0" prefHeight="28.0" prefWidth="57.0" text="病历号：" textFill="#8fa192">
+            <Label layoutX="14.0" layoutY="82.0" prefHeight="28.0" prefWidth="57.0" text="病例号：" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
@@ -135,24 +135,24 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <CheckBox layoutX="11.0" layoutY="462.0" mnemonicParsing="false" text="病例本" textFill="#8fa192">
+            <CheckBox fx:id="MedicalHistoryBook" layoutX="11.0" layoutY="462.0" mnemonicParsing="false" text="病例本" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
             </CheckBox>
-            <DatePicker layoutX="308.0" layoutY="454.0" />
-            <ChoiceBox layoutX="78.0" layoutY="388.0" prefWidth="150.0" />
-            <ChoiceBox layoutX="280.0" layoutY="389.0" prefWidth="150.0" />
-            <ChoiceBox layoutX="522.0" layoutY="388.0" prefWidth="150.0" />
-            <Button layoutX="691.0" layoutY="459.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="67.0" text="挂号" />
-            <AnchorPane layoutY="-6.0" prefHeight="40.0" prefWidth="900.0" style="-fx-background-color: gray;">
+            <DatePicker fx:id="Time" layoutX="308.0" layoutY="454.0" />
+            <ChoiceBox fx:id="Room" layoutX="78.0" layoutY="388.0" prefWidth="150.0" />
+            <ChoiceBox fx:id="NumberInLine" layoutX="280.0" layoutY="389.0" prefWidth="150.0" />
+            <ChoiceBox fx:id="Doctor" layoutX="522.0" layoutY="388.0" prefWidth="150.0" />
+            <Button fx:id="register" layoutX="691.0" layoutY="459.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="67.0" text="挂号" />
+            <AnchorPane fx:id="Pane" layoutY="-6.0" onMouseDragged="#onMouseDraggedForMove" onMousePressed="#onMousePressedForMove" prefHeight="40.0" prefWidth="900.0" style="-fx-background-color: gray;">
                <children>
                   <Label layoutX="14.0" layoutY="2.0" prefHeight="40.0" prefWidth="90.0" text="挂号收费" textFill="#ff6161">
                      <font>
                         <Font name="System Bold" size="22.0" />
                      </font>
                   </Label>
-                  <Button layoutX="830.0" layoutY="9.0" mnemonicParsing="false" text="关闭" />
+                  <Button layoutX="830.0" layoutY="9.0" mnemonicParsing="false" onAction="#Close" text="关闭" />
                </children>
             </AnchorPane>
          </children>

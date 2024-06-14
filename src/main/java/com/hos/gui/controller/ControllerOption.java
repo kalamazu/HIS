@@ -1,6 +1,7 @@
 package com.hos.gui.controller;
 
 import com.hos.gui.HelloApplication;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -15,9 +16,7 @@ import java.io.IOException;
 
 public class ControllerOption {
 @FXML
-    private Button charge;
-@FXML
-    private Button logout;
+private Button logout;
 @FXML
     private void openChargeWindows(){
     try {
