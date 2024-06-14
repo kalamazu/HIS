@@ -22,8 +22,6 @@ public class SQL_UTILS {
     private String database_url;
     private static SQL_UTILS instance; // 单例模式
 
-    public Patient currentUser;
-
     private SQL_UTILS() {
         this.user = "root";
         this.password = "chenyinan";
