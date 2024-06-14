@@ -27,7 +27,9 @@ public class SQL_UTILS {
         this.password = "chenyinan";
         this.database_url = "localhost";jdbc:mysql://localhost:3306/his?useSSL=false&serverTimezone=Asia/Shanghai
         //127.0.0.1
+        //这里填写127.0.0.1或者localhost都是可以的
         this.database_name = "HIS";
+        //小写也可以
     }
 
     // 单例
@@ -83,7 +85,7 @@ public class SQL_UTILS {
      */
     public Patient getUserByUserName(String patientName) {
         try {
-            String sql = "SELECT * FROM patient_table WHERE realname = ?";
+            String sql = "SELECT * FROM patient WHERE realname = ?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, patientName);
             ResultSet rs = pstmt.executeQuery();
