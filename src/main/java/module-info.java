@@ -2,6 +2,8 @@ module com.hos.gui {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
+    requires static lombok;
+    requires org.junit.jupiter.api;
 
 
     opens com.hos.gui to javafx.fxml;

@@ -1,5 +1,8 @@
 package com.hos.gui.entity;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 /**
  * @Title: patient
  * @Author itmei
@@ -9,6 +12,8 @@ package com.hos.gui.entity;
  */
 
 
+@Data
+@NoArgsConstructor
 
 public class Patient {
     private Integer id;			//病例号
@@ -29,7 +34,7 @@ public class Patient {
     private Double drugprice;		//药品总价
     private int visitstate;		//看诊状态（1:已挂号，2.看诊结束，3已取药，4.已退号）
 
-    public Patient() {
+    /*public Patient() {
 
     }
 
@@ -191,5 +196,5 @@ public class Patient {
         this.prescription = prescription;
         this.drugprice = drugprice;
         this.visitstate = visitstate;
-    }
+    }*/
 }
