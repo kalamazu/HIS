@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 
 public class test {
 
+//不好使
     @Test
     public void testSQLconnection(){
         Patient patient = SQL_UTILS.getInstance().getUserByUserName("李四");
@@ -27,7 +28,8 @@ public class test {
     }
 
     public static void main(String[] args) {
-        Patient patient = SQL_UTILS.getInstance().getUserByUserName("李四");
+        String name = "张三";
+        Patient patient = SQL_UTILS.getInstance().getUserByUserName(name);
         System.out.println(patient);
 
     }

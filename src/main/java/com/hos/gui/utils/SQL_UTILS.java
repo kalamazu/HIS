@@ -1,6 +1,7 @@
 package com.hos.gui.utils;
 
 import com.hos.gui.entity.Doctor;
+import com.hos.gui.entity.Manager;
 import com.hos.gui.entity.Patient;
 
 import java.sql.*;
@@ -328,7 +329,52 @@ public class SQL_UTILS {
         return false;
     }
 
+    /**
+     * 即用户注册
+     * @param manager
+     */
+    public void createManager(Manager manager) {
+        try {
+            String sql = "INSERT INTO manager (id, pwd) VALUES (?, ?)";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, manager.getId());
+            pstmt.setString(2, manager.getPwd());
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
+    /**
+     * 修改账户密码
+     * @param manager
+     */
+    public void updateManager(Manager manager) {
+        try {
+            String sql = "UPDATE manager SET pwd = ? WHERE id = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, manager.getPwd());
+            pstmt.setString(2, manager.getId());
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * 删除管理员
+     * @param id
+     */
+    public void deleteManagerById(String id) {
+        try {
+            String sql = "DELETE FROM manager WHERE id = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, id);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 
 /*    public boolean addUser(User newUser) {

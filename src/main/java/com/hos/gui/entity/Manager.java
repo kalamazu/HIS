@@ -13,7 +13,6 @@ import lombok.*;
 
 @Data
 @NoArgsConstructor
-
 public class Manager {
     String id;
     String pwd;
