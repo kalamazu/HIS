@@ -88,7 +88,18 @@ public class ControllerPatience {
         /**
          * 保存到数据库中
          */
+        Patient patient = SQL_UTILS.getInstance().getPatientById(PatienceNumber.getText());
+        String medicalCertificate = MedicalCertificate.getText();
+        String medicineList = MedicineList.getText();
+        double totalFee = Double.parseDouble(TotalFee.getText());
 
+        // 设置新的值到Patient对象中
+        patient.setDiagiosis(medicalCertificate);
+        patient.setPrescription(medicineList);
+        patient.setDrugprice(totalFee);
+        // 更新病人信息
+        SQL_UTILS sqlUtils = SQL_UTILS.getInstance();
+        sqlUtils.updatePatient(patient);
 
     }
 
