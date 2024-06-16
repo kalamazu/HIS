@@ -112,12 +112,26 @@ public class ControllerPatience {
             Age.setText(String.valueOf(patient.getAge()));
             Gender.setText(patient.getGender());
             IDNumber.setText(patient.getCardnumber());
+            Doctor.setText(patient.getDoctorname());
+            Level.setText(patient.getRegistlevel());
+            Time.setText(patient.getRegistdate());
+            TotalFee.setText(String.valueOf(patient.getRegistfee()));
+            MedicineList.setText(patient.getPrescription());
+            MedicalCertificate.setText(patient.getDiagiosis());
         } else {
             // 如果未找到患者，清空相应的Label
             Room.setText("");
             Name.setText("");
             Age.setText("");
             Gender.setText("");
+            IDNumber.setText("");
+            Doctor.setText("");
+            Level.setText("");
+            Time.setText("");
+            TotalFee.setText("");
+            MedicineList.setText("");
+            MedicalCertificate.setText("");
+            System.out.println("未找到该患者");
         }
     }
 }
