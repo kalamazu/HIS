@@ -82,7 +82,7 @@ public class Controller {
      /**
       * 登录校
       */
-     if(SQL_UTILS.getInstance().Login(UserName.getText(), Password.getText())) {
+     if(SQL_UTILS.getInstance().Login(UserName.getText(), Password.getText()) && SQL_UTILS.getInstance().isValidPassword(Password.getText()) && SQL_UTILS.getInstance().isValidPassword(UserName.getText())) {
 
 
          try {
@@ -106,9 +106,19 @@ public class Controller {
          }
      }
      else{
+         if (!(SQL_UTILS.getInstance().isValidPassword(Password.getText()))) {
+             message.setText("密码非法,密码可以包含字母、数字和特殊字符");
+         }
+         else if(!(SQL_UTILS.getInstance().isValidPassword(UserName.getText()))){
+             message.setText("用户名非法,用户名只能包含字母、数字和下划线");
+         }
+         else if(!(SQL_UTILS.getInstance().Login(UserName.getText(), Password.getText()))){
+             message.setText("账号或密码错误");
+         }
          UserName.setText("");
          Password.setText("");
-         message.setText("账号或密码错误");
+
+
      }
  }
 }
