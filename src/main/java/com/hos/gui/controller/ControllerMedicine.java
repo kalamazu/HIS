@@ -6,9 +6,16 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+
+
 
 public class ControllerMedicine {
     private double xOffset = 0;
@@ -104,8 +111,21 @@ public class ControllerMedicine {
     }
     @FXML//确认发药按钮
     void onConfirmButton(ActionEvent event) {
+        Image image = new Image("scanme.jpg");
+
+        ImageView imageView = new ImageView(image);
+        imageView.setFitWidth(400);
+        imageView.setPreserveRatio(true);
+
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("图片弹出窗口");
+        alert.setHeaderText(null);
+        alert.setGraphic(imageView);
+
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
+
     }
 
 }
