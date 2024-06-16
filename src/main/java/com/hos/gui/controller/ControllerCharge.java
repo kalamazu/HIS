@@ -34,11 +34,6 @@ public class ControllerCharge implements Initializable {
     @FXML
     private DatePicker BirthDate;
 
-    @FXML
-    private Label Change;
-
-    @FXML
-    private Label Charger;
 
     @FXML
     private Button Close;
@@ -73,8 +68,7 @@ public class ControllerCharge implements Initializable {
     @FXML
     private ChoiceBox<String> Room;
 
-    @FXML
-    private Label ShouldCharge;
+
 
     @FXML
     private DatePicker Time;
@@ -144,6 +138,11 @@ public class ControllerCharge implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
        Room.getItems().addAll("心脏科", "神经科", "骨科","儿科");
        NumberInLine.getItems().addAll("普通","主任医师","专家");
+
+    }
+
+    @FXML
+    void checkDoctor(ActionEvent event) {
 
     }
     //Test

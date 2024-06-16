@@ -68,43 +68,17 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="658.0" layoutY="89.0" prefHeight="28.0" prefWidth="72.0" text="应收金额：" textFill="#8fa192">
+            <Label layoutX="658.0" layoutY="89.0" prefHeight="28.0" prefWidth="156.0" text="点击挂号，使用微信支付" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="658.0" layoutY="138.0" prefHeight="28.0" prefWidth="72.0" text="实收金额：" textFill="#8fa192">
+            <Label layoutX="658.0" layoutY="141.0" prefHeight="28.0" prefWidth="57.0" text="收费员：" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="658.0" layoutY="183.0" prefHeight="28.0" prefWidth="57.0" text="找零：" textFill="#8fa192">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="658.0" layoutY="231.0" prefHeight="28.0" prefWidth="57.0" text="收费员：" textFill="#8fa192">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label fx:id="ShouldCharge" layoutX="730.0" layoutY="89.0" prefHeight="28.0" prefWidth="57.0" text="0" textFill="#8fa192">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <TextField fx:id="ActuallyCharge" layoutX="729.0" layoutY="138.0" prefHeight="32.0" prefWidth="107.0" />
-            <Label layoutX="843.0" layoutY="140.0" prefHeight="28.0" prefWidth="33.0" text="元" textFill="#8fa192">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label fx:id="Change" layoutX="718.0" layoutY="182.0" prefHeight="28.0" prefWidth="57.0" text="无" textFill="#8fa192">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label fx:id="Charger" layoutX="718.0" layoutY="231.0" prefHeight="28.0" prefWidth="57.0" text="admin" textFill="#8fa192">
+            <Label fx:id="Charger" layoutX="715.0" layoutY="141.0" prefHeight="28.0" prefWidth="57.0" text="admin" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
@@ -143,7 +117,7 @@
             <ChoiceBox fx:id="Room" layoutX="78.0" layoutY="388.0" prefWidth="150.0" />
             <ChoiceBox fx:id="NumberInLine" layoutX="280.0" layoutY="389.0" prefWidth="150.0" />
             <ChoiceBox fx:id="Doctor" layoutX="522.0" layoutY="388.0" prefWidth="150.0" />
-            <Button fx:id="register" layoutX="691.0" layoutY="459.0" mnemonicParsing="false" onAction="#onRegisterButton" prefHeight="34.0" prefWidth="67.0" text="挂号" />
+            <Button fx:id="register" layoutX="768.0" layoutY="455.0" mnemonicParsing="false" onAction="#onRegisterButton" prefHeight="34.0" prefWidth="67.0" text="挂号" />
             <AnchorPane fx:id="Pane" layoutY="-6.0" onMouseDragged="#onMouseDraggedForMove" onMousePressed="#onMousePressedForMove" prefHeight="40.0" prefWidth="900.0" style="-fx-background-color: gray;">
                <children>
                   <Label layoutX="14.0" layoutY="2.0" prefHeight="40.0" prefWidth="90.0" text="挂号收费" textFill="#ff6161">
@@ -154,6 +128,7 @@
                   <Button layoutX="830.0" layoutY="9.0" mnemonicParsing="false" onAction="#Close" text="关闭" />
                </children>
             </AnchorPane>
+            <Button layoutX="687.0" layoutY="382.0" mnemonicParsing="false" onAction="#checkDoctor" text="查询医生" />
          </children>
       </AnchorPane>
    </children>
