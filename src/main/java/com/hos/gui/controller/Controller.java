@@ -108,10 +108,8 @@ public class Controller {
      else{
          UserName.setText("");
          Password.setText("");
-
+         message.setText("账号或密码错误");
      }
-
-
  }
 }
 
