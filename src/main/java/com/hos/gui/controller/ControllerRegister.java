@@ -69,25 +69,6 @@ public class ControllerRegister {
 
 
 
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/hos/gui/Login.fxml"));
-                Controller controller = new Controller();
-                loader.setController(controller);
-                StackPane root = loader.load();
-                Scene secondWindowScene = new Scene(root);
-
-                Stage secondWindowStage = new Stage();
-                secondWindowStage.setScene(secondWindowScene);
-                secondWindowStage.initStyle(StageStyle.UNDECORATED);
-                secondWindowStage.show();
-
-                Stage mainWindowStage = (Stage) UserName.getScene().getWindow();
-
-                mainWindowStage.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-
-            }
 
         }
 
