@@ -19,9 +19,6 @@ import javafx.stage.StageStyle;
 import java.io.IOException;
 
 public class ControllerRegister {
-
-
-
         private double xOffset = 0;
         private double yOffset = 0;
         @FXML

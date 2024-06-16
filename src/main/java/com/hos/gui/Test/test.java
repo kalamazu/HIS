@@ -30,6 +30,10 @@ public class test {
     @Test
     public void testSQLreturn(){
         //Test Clayton
+        List<Doctor> doctors = SQL_UTILS.getInstance().getDoctorsByDep("儿科");
+        for (Doctor doctor : doctors) {
+            System.out.println(doctor);
+        }
 
     }
 
