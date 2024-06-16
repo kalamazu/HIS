@@ -63,8 +63,6 @@ public class ControllerRegister {
             stage.setX(event.getScreenX() - xOffset);
             stage.setY(event.getScreenY() - yOffset);
         }
-
-
         @FXML
         void register(ActionEvent event) {
 
@@ -82,8 +80,9 @@ public class ControllerRegister {
                     message.setText("两次密码不一致");
                 }
             }
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.close();
         }
-
     }
 
 
