@@ -146,4 +146,5 @@ public class ControllerCharge implements Initializable {
        NumberInLine.getItems().addAll("普通","主任医师","专家");
 
     }
+    //Test
 }
