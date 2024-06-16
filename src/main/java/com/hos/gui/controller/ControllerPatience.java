@@ -96,11 +96,28 @@ public class ControllerPatience {
         /**
          * 查询修改
          */
-        //示例
-        //PatienceNumber
-        Patient patient = SQL_UTILS.getInstance().getPatientByName(PatienceNumber.getText());
-        System.out.println(patient);
-        Room.setText(patient.getDeptname());
-    }
+        // 获取用户输入的病历号
+        String patientNumber = PatienceNumber.getText();
 
+        // 查询数据库，获取患者信息
+        Patient patient = SQL_UTILS.getInstance().getPatientByName(PatienceNumber.getText());
+
+        // 打印患者信息到控制台
+        System.out.println(patient);
+
+        // 更新界面上的Label
+        if (patient != null) {
+            Room.setText(patient.getDeptname());
+            Name.setText(patient.getDeptname());
+            Age.setText(String.valueOf(patient.getAge()));
+            Gender.setText(patient.getGender());
+            IDNumber.setText(String.valueOf(patient.getId()));
+        } else {
+            // 如果未找到患者，清空相应的Label
+            Room.setText("");
+            Name.setText("");
+            Age.setText("");
+            Gender.setText("");
+        }
+    }
 }
