@@ -5,6 +5,8 @@ import com.hos.gui.entity.Manager;
 import com.hos.gui.entity.Patient;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -294,6 +296,35 @@ public class SQL_UTILS {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     * 按照科室查询
+     * @param dep
+     * @return
+     */
+    public List<Doctor> getDoctorsByDep(String dep) {
+        List<Doctor> doctors = new ArrayList<>();
+        try {
+            String sql = "SELECT * FROM doctor WHERE deptname = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, dep);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                Doctor doctor = new Doctor();
+                doctor.setId(rs.getString("id"));
+                doctor.setRealname(rs.getString("realname"));
+                doctor.setDeptname(rs.getString("deptname"));
+                doctor.setRegistlevel(rs.getString("registlevel"));
+                doctor.setRegistfee(rs.getDouble("registfee"));
+                doctors.add(doctor);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return doctors;
+    }
+
+
 
     /**
      * 管理员登录
