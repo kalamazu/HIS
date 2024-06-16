@@ -331,16 +331,16 @@ public class SQL_UTILS {
 
 //正则表达式校验
     public boolean isValidUsername(String username) {
-        // 用户名只能包含字母、数字和下划线，长度在3到20之间
-        String usernameRegex = "^[a-zA-Z0-9_]{3,20}$";
+        // 用户名只能包含字母、数字和下划线
+        String usernameRegex = "^[a-zA-Z0-9_]+$";
         Pattern pattern = Pattern.compile(usernameRegex);
         Matcher matcher = pattern.matcher(username);
         return matcher.matches();
     }
 
     public boolean isValidPassword(String password) {
-        // 密码至少包含8个字符，可以包含字母、数字和特殊字符
-        String passwordRegex = "^[a-zA-Z0-9!@#$%^&*()_+=\\-{}\\[\\]:;\"'<>,.?/]{8,}$";
+        //可以包含字母、数字和特殊字符
+        String passwordRegex = "^[a-zA-Z0-9!@#$%^&*()_+=\\\\-{}\\\\[\\\\]:;\\\"'<>,.?/]+$";
         Pattern pattern = Pattern.compile(passwordRegex);
         Matcher matcher = pattern.matcher(password);
         return matcher.matches();
