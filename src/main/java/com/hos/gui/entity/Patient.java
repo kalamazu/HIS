@@ -1,5 +1,6 @@
 package com.hos.gui.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,6 +15,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class Patient {
     private Integer id;			//病例号
     private String realname = "default";		//患者姓名

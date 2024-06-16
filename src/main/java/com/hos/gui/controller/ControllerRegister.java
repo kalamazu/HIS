@@ -1,5 +1,7 @@
 package com.hos.gui.controller;
 
+import com.hos.gui.entity.Manager;
+import com.hos.gui.utils.SQL_UTILS;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -66,10 +68,20 @@ public class ControllerRegister {
         @FXML
         void register(ActionEvent event) {
 
-
-
-
-
+            if(Password.getText().equals(RePassword.getText()) && SQL_UTILS.getInstance().isValidPassword(Password.getText()) && SQL_UTILS.getInstance().isValidPassword(UserName.getText())){
+                Manager manager = new Manager(UserName.getText(), Password.getText());
+                SQL_UTILS.getInstance().createManager(manager);
+            }else{
+                if (!(SQL_UTILS.getInstance().isValidPassword(Password.getText()))) {
+                    message.setText("密码非法,密码可以包含字母、数字和特殊字符");
+                }
+                else if(!(SQL_UTILS.getInstance().isValidPassword(UserName.getText()))){
+                    message.setText("用户名非法,用户名只能包含字母、数字和下划线");
+                }
+                else if(!(Password.getText().equals(RePassword.getText()))){
+                    message.setText("两次密码不一致");
+                }
+            }
         }
 
     }

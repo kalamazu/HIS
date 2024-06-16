@@ -78,7 +78,7 @@ public class Controller {
     public void openOptionWindows(ActionEvent event){
 
      /**
-      * 登录校
+      * 登录校验
       */
      if(SQL_UTILS.getInstance().Login(UserName.getText(), Password.getText()) && SQL_UTILS.getInstance().isValidPassword(Password.getText()) && SQL_UTILS.getInstance().isValidPassword(UserName.getText())) {
 

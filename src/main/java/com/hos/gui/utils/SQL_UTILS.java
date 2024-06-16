@@ -246,48 +246,6 @@ public class SQL_UTILS {
         }
     }
 
-
-
-    /*public boolean patientLogin(String patientID,String patientPwd){
-
-        try {
-            //patient_login  表中通过id查询密码与用户输入进行对比，即登陆验证
-            String sql = "SELECT * FROM patient_login WHERE id = ?";
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, patientID);
-            ResultSet rs = pstmt.executeQuery();
-            if (rs.next()) {
-                if(patientPwd.equals(rs.getString("pwd")))
-                return true;
-            } else {
-                return false;
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return false;
-    }
-
-    public boolean DoctorLogin(String doctorID,String doctorPwd){
-
-        try {
-            //patient_login  表中通过id查询密码与用户输入进行对比，即登陆验证
-            String sql = "SELECT * FROM doctor_login WHERE id = ?";
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, doctorPwd);
-            ResultSet rs = pstmt.executeQuery();
-            if (rs.next()) {
-                if(doctorPwd.equals(rs.getString("pwd")))
-                    return true;
-            } else {
-                return false;
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return false;
-    }*/
-
     /**
      * 管理员登录
      * @param manID
@@ -378,26 +336,4 @@ public class SQL_UTILS {
             throw new RuntimeException(e);
         }
     }
-
-
-/*    public boolean addUser(User newUser) {
-        // 输入username、password、role，插入数据库
-        try {
-            String sql = "INSERT INTO usertable(username,password,role) VALUES(?,?,?)";
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-
-            pstmt.setString(1, newUser.getUserName());
-            pstmt.setString(2, newUser.getPassword());
-            pstmt.setString(3, newUser.getUserRole());
-
-            pstmt.executeUpdate();
-            System.out.println("添加用户成功！");
-            return true;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
- */
-
 }
