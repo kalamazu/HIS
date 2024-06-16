@@ -115,7 +115,7 @@ public class SQL_UTILS {
      * @param patientName
      * @return patient实例
      */
-    public Patient getUserByUserName(String patientName) {
+    public Patient getPatientByName(String patientName) {
         try {
             String sql = "SELECT * FROM patient WHERE realname = ?";
             PreparedStatement pstmt = conn.prepareStatement(sql);

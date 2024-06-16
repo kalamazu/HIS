@@ -1,5 +1,7 @@
 package com.hos.gui.controller;
 
+import com.hos.gui.entity.Patient;
+import com.hos.gui.utils.SQL_UTILS;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -81,12 +83,24 @@ public class ControllerPatience {
         stage.close();
     }
 
-    @FXML//查询按钮
+    @FXML//保存按钮
     void onSaveButton(ActionEvent event) {
+        /**
+         * 保存到数据库中
+         */
+
 
     }
-    @FXML//保存按钮
+    @FXML//查询按钮
     void onCheckButton(ActionEvent event) {
+        /**
+         * 查询修改
+         */
+        //示例
+        //PatienceNumber
+        Patient patient = SQL_UTILS.getInstance().getPatientByName(PatienceNumber.getText());
+        System.out.println(patient);
+        Room.setText(patient.getDeptname());
 
     }
 

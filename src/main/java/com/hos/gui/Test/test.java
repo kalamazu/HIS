@@ -19,7 +19,7 @@ public class test {
 //不好使
     @Test
     public void testSQLconnection(){
-        Patient patient = SQL_UTILS.getInstance().getUserByUserName("李四");
+        Patient patient = SQL_UTILS.getInstance().getPatientByName("李四");
         System.out.println(patient);
 
     }
@@ -31,7 +31,7 @@ public class test {
 
     public static void main(String[] args) {
         String name = "张三";
-        Patient patient = SQL_UTILS.getInstance().getUserByUserName(name);
+        Patient patient = SQL_UTILS.getInstance().getPatientByName(name);
         System.out.println(patient);
     }
 

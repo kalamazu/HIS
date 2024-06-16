@@ -75,6 +75,11 @@ public class Controller {
     }
  @FXML
     public void openOptionWindows(ActionEvent event){
+
+     /**
+      * 登录校验
+      */
+
      try {
          FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/hos/gui/Main.fxml"));
          ControllerOption controller=new ControllerOption();
