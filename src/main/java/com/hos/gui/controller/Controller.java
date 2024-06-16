@@ -8,11 +8,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.Node;
 import javafx.stage.StageStyle;
@@ -121,5 +119,27 @@ public class Controller {
 
      }
  }
+    @FXML
+    void register(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/hos/gui/Register.fxml"));
+            ControllerRegister controller = new ControllerRegister();
+            loader.setController(controller);
+            StackPane root = loader.load();
+            Scene secondWindowScene = new Scene(root);
+
+            Stage secondWindowStage = new Stage();
+            secondWindowStage.setScene(secondWindowScene);
+            secondWindowStage.initStyle(StageStyle.UNDECORATED);
+            secondWindowStage.show();
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+    }
+
+
 }
 
