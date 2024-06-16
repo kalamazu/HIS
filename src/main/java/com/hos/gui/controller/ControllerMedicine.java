@@ -111,17 +111,23 @@ public class ControllerMedicine {
     }
     @FXML//确认发药按钮
     void onConfirmButton(ActionEvent event) {
-        Image image = new Image("scanme.jpg");
+        Image image = new Image("/scanme.jpg");
 
         ImageView imageView = new ImageView(image);
-        imageView.setFitWidth(400);
+/*        imageView.setFitWidth(3000);
+        imageView.setFitHeight(2000);*/
         imageView.setPreserveRatio(true);
 
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeight(1124);
+        alert.setWidth(824);
         alert.setTitle("图片弹出窗口");
         alert.setHeaderText(null);
         alert.setGraphic(imageView);
+
+
+        alert.showAndWait();
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
