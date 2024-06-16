@@ -86,7 +86,7 @@ public class SQL_UTILS {
      */
     public void createPatient(Patient patient) {
         try {
-            String sql = "INSERT INTO patient (realname, gender, cardnumber, birthdate, age, homeaddress, deptname, doctorname, registlevel, isbook, registfee, registdate, diagiosis, prescription, drugprice, visitstate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO patient (realname, gender, cardnumber, birthdate, age, homeaddress, deptname, doctorname, registlevel, isbook, registfee, registdate, diagiosis, prescription, drugprice, visitstate,id ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, patient.getRealname());
             pstmt.setString(2, patient.getGender());
@@ -97,13 +97,14 @@ public class SQL_UTILS {
             pstmt.setString(7, patient.getDeptname());
             pstmt.setString(8, patient.getDoctorname());
             pstmt.setString(9, patient.getRegistlevel());
-            pstmt.setString(10, patient.getIsbook());
+            pstmt.setBoolean(10, patient.getIsbook());
             pstmt.setDouble(11, patient.getRegistfee());
             pstmt.setString(12, patient.getRegistdate());
             pstmt.setString(13, patient.getDiagiosis());
             pstmt.setString(14, patient.getPrescription());
             pstmt.setDouble(15, patient.getDrugprice());
             pstmt.setInt(16, patient.getVisitstate());
+            pstmt.setInt(17, patient.getId());
             pstmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -125,20 +126,6 @@ public class SQL_UTILS {
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
                 Patient patient = new Patient();
-
-/*                patient.setId(Integer.parseInt(rs.getString("id")));
-                patient.setRealname(rs.getString("realname"));
-                patient.setGender(rs.getString("gender"));
-                patient.setAge(rs.getInt("age"));
-                patient.setHomeaddress(rs.getString("homeaddress"));
-                patient.setCardnumber(rs.getString("cardnumber"));
-                patient.setDeptname(rs.getString("deptname"));
-                patient.setDoctorname(rs.getString("doctorname"));
-                patient.setCardnumber(rs.getString("registlevel"));
-                patient.setCardnumber(rs.getString("registdate"));*/
-
-
-
                 patient.setId(rs.getInt("id"));
                 patient.setRealname(rs.getString("realname"));
                 patient.setGender(rs.getString("gender"));
@@ -149,7 +136,7 @@ public class SQL_UTILS {
                 patient.setDeptname(rs.getString("deptname"));
                 patient.setDoctorname(rs.getString("doctorname"));
                 patient.setRegistlevel(rs.getString("registlevel"));
-                patient.setIsbook(rs.getString("isbook"));
+                patient.setIsbook(rs.getBoolean("isbook"));
                 patient.setRegistfee(rs.getDouble("registfee"));
                 patient.setRegistdate(rs.getString("registdate"));
                 patient.setDiagiosis(rs.getString("diagiosis"));
@@ -183,7 +170,7 @@ public class SQL_UTILS {
             pstmt.setString(7, patient.getDeptname());
             pstmt.setString(8, patient.getDoctorname());
             pstmt.setString(9, patient.getRegistlevel());
-            pstmt.setString(10, patient.getIsbook());
+            pstmt.setBoolean(10, patient.getIsbook());
             pstmt.setDouble(11, patient.getRegistfee());
             pstmt.setString(12, patient.getRegistdate());
             pstmt.setString(13, patient.getDiagiosis());
@@ -219,14 +206,13 @@ public class SQL_UTILS {
      */
     public void updateDoctor(Doctor doctor) {
         try {
-            String sql = "UPDATE doctor SET realname = ?, password = ?, deptname = ?, registlevel = ?, registfee = ? WHERE id = ?";
+            String sql = "UPDATE doctor SET realname = ?, deptname = ?, registlevel = ?, registfee = ? WHERE id = ?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, doctor.getRealname());
-            pstmt.setString(2, doctor.getPassword());
-            pstmt.setString(3, doctor.getDeptname());
-            pstmt.setString(4, doctor.getRegistlevel());
-            pstmt.setDouble(5, doctor.getRegistfee());
-            pstmt.setString(6, doctor.getId());
+            pstmt.setString(2, doctor.getDeptname());
+            pstmt.setString(3, doctor.getRegistlevel());
+            pstmt.setDouble(4, doctor.getRegistfee());
+            pstmt.setString(5, doctor.getId());
             pstmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -248,7 +234,6 @@ public class SQL_UTILS {
                 Doctor doctor = new Doctor();
                 doctor.setId(rs.getString("id"));
                 doctor.setRealname(rs.getString("realname"));
-                doctor.setPassword(rs.getString("password"));
                 doctor.setDeptname(rs.getString("deptname"));
                 doctor.setRegistlevel(rs.getString("registlevel"));
                 doctor.setRegistfee(rs.getDouble("registfee"));

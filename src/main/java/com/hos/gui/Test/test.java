@@ -32,10 +32,25 @@ public class test {
 
     public static void main(String[] args) {
         String name = "张三";
-        Patient patient = SQL_UTILS.getInstance().getPatientByName(name);
-        System.out.println(patient);
+//        Patient patient = SQL_UTILS.getInstance().getPatientByName(name);
+/*        Patient patient1 = new Patient();
+        patient1.setId(43);
+        patient1.setAge(12);
+        SQL_UTILS.getInstance().createPatient(patient1);*/
+//        SQL_UTILS.getInstance().deletePatientById(6);
+
+//        System.out.println(patient);
         //Test git
         //Test GitHub
+/*        Doctor doctor  = SQL_UTILS.getInstance().getDoctorById("1");
+        System.out.println(doctor);*/
+        Doctor doctor = new Doctor();
+        doctor.setId("1");
+        SQL_UTILS.getInstance().updateDoctor(doctor);
+
+
+
+
 
     }
 

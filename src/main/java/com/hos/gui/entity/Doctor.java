@@ -14,11 +14,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class Doctor {
-    private String id;            // 医生编号
-    private String realname;      // 真实姓名
-    private String password;      // 密码
-    private String deptname;      // 所在科室
-    private String registlevel;   // 挂号级别
-    private Double registfee;     // 挂号费
+    private String id = "default";            // 医生编号
+    private String realname = "default";      // 真实姓名
+    private String deptname = "default";      // 所在科室
+    private String registlevel = "普通";   // 挂号级别
+    private Double registfee = 0.0;     // 挂号费
 
 }
