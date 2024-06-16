@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83e45e2d-6daf-4fb3-8b02-ab5e2772663b" name="Changes" comment="返回医生集合方法更新">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hos/gui/controller/ControllerCharge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hos/gui/controller/ControllerCharge.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hos/gui/controller/ControllerMedicine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hos/gui/controller/ControllerMedicine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +53,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.HelloApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
     &quot;Application.test.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.test.testSQLreturn.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -69,7 +72,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.test.testSQLreturn">
+  <component name="RunManager" selected="Application.HelloApplication">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.hos.gui.HelloApplication" />
       <module name="player_1" />
@@ -114,7 +117,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HelloApplication" />
         <item itemvalue="JUnit.test.testSQLreturn" />
+        <item itemvalue="Application.test" />
       </list>
     </recent_temporary>
   </component>
@@ -277,5 +282,16 @@
     <MESSAGE value="删除service" />
     <MESSAGE value="返回医生集合方法更新" />
     <option name="LAST_COMMIT_MESSAGE" value="返回医生集合方法更新" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hos/gui/controller/ControllerPatience.java</url>
+          <line>92</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

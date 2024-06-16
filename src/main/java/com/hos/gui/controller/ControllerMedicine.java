@@ -1,7 +1,5 @@
 package com.hos.gui.controller;
 
-import com.hos.gui.entity.Patient;
-import com.hos.gui.utils.SQL_UTILS;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -70,43 +68,11 @@ public class ControllerMedicine {
     }
     @FXML
     void Close(ActionEvent event) {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.close();
+
     }
 
     @FXML//查询按钮
     void onCheckButton(ActionEvent event) {
-        // 获取用户输入的病历号
-        String patientNumber = PatienceNumber.getText();
-
-        // 查询数据库，获取患者信息
-        Patient patient = SQL_UTILS.getInstance().getPatientById(PatienceNumber.getText());
-
-        // 打印患者信息到控制台
-        System.out.println(patient);
-
-        if (patient != null) {
-            if ("male".equalsIgnoreCase(patient.getGender())) {
-                Gender.setText("男");
-            } else if ("female".equalsIgnoreCase(patient.getGender())) {
-                Gender.setText("女");
-            } else {
-                Gender.setText("其他");
-            }
-            Name.setText(patient.getRealname());
-            Age.setText(String.valueOf(patient.getAge()));
-            IDNumber.setText(patient.getCardnumber());
-            TotalFee.setText(String.valueOf(patient.getDrugprice()));
-            MedicineDetail.setText(patient.getPrescription());
-        }else{
-            Name.setText("");
-            Age.setText("");
-            Gender.setText("");
-            IDNumber.setText("");
-            TotalFee.setText("");
-            MedicineDetail.setText("");
-            System.out.println("未找到该患者");
-        }
 
     }
     @FXML//确认发药按钮
