@@ -34,6 +34,8 @@ public class test {
         Patient patient = SQL_UTILS.getInstance().getPatientByName(name);
         System.out.println(patient);
         //Test git
+        //Test GitHub
+
     }
 
 }
