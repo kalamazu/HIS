@@ -64,27 +64,27 @@
                   <Button layoutX="556.0" layoutY="9.0" mnemonicParsing="false" onAction="#Close" text="关闭" />
                </children>
             </AnchorPane>
-            <Label fx:id="Name" layoutX="103.0" layoutY="131.0" prefHeight="19.0" prefWidth="65.0" textFill="RED">
+            <Label fx:id="Name" layoutX="103.0" layoutY="131.0" prefHeight="19.0" prefWidth="65.0" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="Age" layoutX="234.0" layoutY="132.0" prefHeight="19.0" prefWidth="29.0" textFill="RED">
+            <Label fx:id="Age" layoutX="234.0" layoutY="132.0" prefHeight="19.0" prefWidth="29.0" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="Gender" layoutX="326.0" layoutY="131.0" prefHeight="19.0" prefWidth="36.0" textFill="RED">
+            <Label fx:id="Gender" layoutX="326.0" layoutY="131.0" prefHeight="19.0" prefWidth="36.0" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="IDNumber" layoutX="458.0" layoutY="132.0" prefHeight="19.0" prefWidth="157.0" textFill="RED">
+            <Label fx:id="IDNumber" layoutX="458.0" layoutY="132.0" prefHeight="19.0" prefWidth="157.0" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="TotalFee" layoutX="86.0" layoutY="471.0" prefHeight="19.0" prefWidth="65.0" textFill="RED">
+            <Label fx:id="TotalFee" layoutX="86.0" layoutY="471.0" prefHeight="19.0" prefWidth="65.0" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>

@@ -104,42 +104,42 @@
                   <Button layoutX="558.0" layoutY="3.0" mnemonicParsing="false" onAction="#Close" text="关闭" />
                </children>
             </AnchorPane>
-            <Label fx:id="Name" layoutX="109.0" layoutY="143.0" prefHeight="19.0" prefWidth="63.0" textFill="RED">
+            <Label fx:id="Name" layoutX="109.0" layoutY="143.0" prefHeight="19.0" prefWidth="63.0" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="Age" layoutX="235.0" layoutY="143.0" prefHeight="19.0" prefWidth="27.0" textFill="RED">
+            <Label fx:id="Age" layoutX="235.0" layoutY="143.0" prefHeight="19.0" prefWidth="27.0" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="Gender" layoutX="337.0" layoutY="143.0" prefHeight="19.0" prefWidth="27.0" textFill="RED">
+            <Label fx:id="Gender" layoutX="337.0" layoutY="143.0" prefHeight="19.0" prefWidth="27.0" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="IDNumber" layoutX="463.0" layoutY="143.0" prefHeight="19.0" prefWidth="155.0" textFill="RED">
+            <Label fx:id="IDNumber" layoutX="463.0" layoutY="143.0" prefHeight="19.0" prefWidth="155.0" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="Room" layoutX="104.0" layoutY="287.0" prefHeight="19.0" prefWidth="56.0" textFill="RED">
+            <Label fx:id="Room" layoutX="104.0" layoutY="287.0" prefHeight="19.0" prefWidth="56.0" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="Doctor" layoutX="235.0" layoutY="287.0" prefHeight="19.0" prefWidth="63.0" textFill="RED">
+            <Label fx:id="Doctor" layoutX="235.0" layoutY="287.0" prefHeight="19.0" prefWidth="63.0" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="Level" layoutX="378.0" layoutY="287.0" prefHeight="19.0" prefWidth="42.0" textFill="RED">
+            <Label fx:id="Level" layoutX="378.0" layoutY="287.0" prefHeight="19.0" prefWidth="42.0" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="Time" layoutX="510.0" layoutY="290.0" prefHeight="19.0" prefWidth="90.0" textFill="RED">
+            <Label fx:id="Time" layoutX="510.0" layoutY="290.0" prefHeight="19.0" prefWidth="90.0" textFill="#8fa192">
                <font>
                   <Font size="14.0" />
                </font>
