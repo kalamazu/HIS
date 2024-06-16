@@ -302,12 +302,13 @@ public class SQL_UTILS {
      * @param dep
      * @return
      */
-    public List<Doctor> getDoctorsByDep(String dep) {
+    public List<Doctor> getDoctorsByDep(String dep,String level) {
         List<Doctor> doctors = new ArrayList<>();
         try {
-            String sql = "SELECT * FROM doctor WHERE deptname = ?";
+            String sql = "SELECT * FROM doctor WHERE deptname = ? AND registlevel  = ?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, dep);
+            pstmt.setString(2, level);
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
                 Doctor doctor = new Doctor();
