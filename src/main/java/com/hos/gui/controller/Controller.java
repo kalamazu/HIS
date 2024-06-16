@@ -37,7 +37,7 @@ public class Controller {
     public Button login;
 
     @FXML
-    private TextField Password;
+    private PasswordField Password;
 
     @FXML
     private TextField UserName;
