@@ -101,7 +101,6 @@ public class ControllerPatience {
         Patient patient = SQL_UTILS.getInstance().getPatientByName(PatienceNumber.getText());
         System.out.println(patient);
         Room.setText(patient.getDeptname());
-
     }
 
 }
