@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83e45e2d-6daf-4fb3-8b02-ab5e2772663b" name="Changes" comment="second commit">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hos/gui/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/hos/gui/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hos/gui/controller/ControllerRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hos/gui/controller/ControllerRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hos/gui/Register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/hos/gui/Register.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

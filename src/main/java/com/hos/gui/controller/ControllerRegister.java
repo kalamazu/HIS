@@ -37,6 +37,9 @@ public class ControllerRegister {
         @FXML
         private Label message;
 
+        @FXML
+        private Label info;
+
     @FXML
     private void Close(ActionEvent event) {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
