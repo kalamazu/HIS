@@ -100,7 +100,7 @@ public class ControllerPatience {
         String patientNumber = PatienceNumber.getText();
 
         // 查询数据库，获取患者信息
-        Patient patient = SQL_UTILS.getInstance().getPatientByName(PatienceNumber.getText());
+        Patient patient = SQL_UTILS.getInstance().getPatientById(PatienceNumber.getText());
 
         // 打印患者信息到控制台
         System.out.println(patient);
@@ -108,10 +108,10 @@ public class ControllerPatience {
         // 更新界面上的Label
         if (patient != null) {
             Room.setText(patient.getDeptname());
-            Name.setText(patient.getDeptname());
+            Name.setText(patient.getRealname());
             Age.setText(String.valueOf(patient.getAge()));
             Gender.setText(patient.getGender());
-            IDNumber.setText(String.valueOf(patient.getId()));
+            IDNumber.setText(patient.getCardnumber());
         } else {
             // 如果未找到患者，清空相应的Label
             Room.setText("");
