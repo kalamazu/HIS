@@ -1,6 +1,8 @@
 package com.hos.gui.Test;
 
+import com.hos.gui.entity.Doctor;
 import com.hos.gui.entity.Patient;
+import com.hos.gui.service.DoctorService;
 import com.hos.gui.utils.SQL_UTILS;
 import org.junit.jupiter.api.Test;
 
@@ -31,7 +33,6 @@ public class test {
         String name = "张三";
         Patient patient = SQL_UTILS.getInstance().getUserByUserName(name);
         System.out.println(patient);
-
     }
 
 }
