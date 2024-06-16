@@ -123,10 +123,16 @@ public class ControllerPatience {
 
         // 更新界面上的Label
         if (patient != null) {
+            if ("male".equalsIgnoreCase(patient.getGender())) {
+                Gender.setText("男");
+            } else if ("female".equalsIgnoreCase(patient.getGender())) {
+                Gender.setText("女");
+            } else {
+                Gender.setText("其他");
+            }
             Room.setText(patient.getDeptname());
             Name.setText(patient.getRealname());
             Age.setText(String.valueOf(patient.getAge()));
-            Gender.setText(patient.getGender());
             IDNumber.setText(patient.getCardnumber());
             Doctor.setText(patient.getDoctorname());
             Level.setText(patient.getRegistlevel());
