@@ -26,6 +26,7 @@ public class test {
 
     @Test
     public void testSQLreturn(){
+        //Test Clayton
 
     }
 
@@ -33,6 +34,9 @@ public class test {
         String name = "张三";
         Patient patient = SQL_UTILS.getInstance().getPatientByName(name);
         System.out.println(patient);
+        //Test git
+        //Test GitHub
+
     }
 
 }
