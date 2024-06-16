@@ -34,11 +34,6 @@ public class ControllerCharge implements Initializable {
     @FXML
     private DatePicker BirthDate;
 
-    @FXML
-    private Label Change;
-
-    @FXML
-    private Label Charger;
 
     @FXML
     private Button Close;
@@ -73,8 +68,7 @@ public class ControllerCharge implements Initializable {
     @FXML
     private ChoiceBox<String> Room;
 
-    @FXML
-    private Label ShouldCharge;
+
 
     @FXML
     private DatePicker Time;
@@ -127,12 +121,17 @@ public class ControllerCharge implements Initializable {
             Doctor.getItems().addAll(s.toString());
         }
         patient.setDoctorname(Doctor.getValue());//挂号医生
-        ShouldCharge.setText(SQL_UTILS.getInstance().getDoctorByName(Doctor.getValue()).getRegistfee().toString());//应付金额
+
+
+        if(MedicalHistoryBook.isSelected()){
+            ShouldCharge.setText(SQL_UTILS.getInstance().getDoctorByName(Doctor.getValue()).getRegistfee().toString() + 10);//应付金额
+        }else{
+            ShouldCharge.setText(SQL_UTILS.getInstance().getDoctorByName(Doctor.getValue()).getRegistfee().toString());//应付金额
+        }
+
+
         patient.setRegistlevel(NumberInLine.getValue());//号别
-
-
         SQL_UTILS.getInstance().updatePatient(patient);
-
     }
 
     @Override
@@ -141,4 +140,10 @@ public class ControllerCharge implements Initializable {
        NumberInLine.getItems().addAll("普通","主任医师","专家");
 
     }
+
+    @FXML
+    void checkDoctor(ActionEvent event) {
+
+    }
+    //Test
 }
