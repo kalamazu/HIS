@@ -127,12 +127,17 @@ public class ControllerCharge implements Initializable {
             Doctor.getItems().addAll(s.toString());
         }
         patient.setDoctorname(Doctor.getValue());//挂号医生
-        ShouldCharge.setText(SQL_UTILS.getInstance().getDoctorByName(Doctor.getValue()).getRegistfee().toString());//应付金额
+
+
+        if(MedicalHistoryBook.isSelected()){
+            ShouldCharge.setText(SQL_UTILS.getInstance().getDoctorByName(Doctor.getValue()).getRegistfee().toString() + 10);//应付金额
+        }else{
+            ShouldCharge.setText(SQL_UTILS.getInstance().getDoctorByName(Doctor.getValue()).getRegistfee().toString());//应付金额
+        }
+
+
         patient.setRegistlevel(NumberInLine.getValue());//号别
-
-
         SQL_UTILS.getInstance().updatePatient(patient);
-
     }
 
     @Override
