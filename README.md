@@ -11,7 +11,7 @@
 
 1. 构建maven
 2. 链接数据库，修改SQL_UTILS中的配置信息，如username和password
-3. 运行src/his.sql脚本黄建数据库
+3. 运行src/his.sql脚本创建数据库
 4. 运行HelloApplcation
 
 ### 技术栈
