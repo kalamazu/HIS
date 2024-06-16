@@ -31,7 +31,7 @@ CREATE TABLE `doctor` (
 
 /*Data for the table `doctor` */
 
-insert  into `doctor`(`id`,`realname`,`deptname`,`registlevel`,`registfee`) values 
+insert  into `doctor`(`id`,`realname`,`deptname`,`registlevel`,`registfee`) values
 (1,'default','default','普通',0.00),
 (2,'王医生','外科','专家',50.00),
 (3,'张医生','儿科','主任医师',30.00),
@@ -50,7 +50,7 @@ CREATE TABLE `manager` (
 
 /*Data for the table `manager` */
 
-insert  into `manager`(`id`,`pwd`) values 
+insert  into `manager`(`id`,`pwd`) values
 ('manager1','password1'),
 ('manager2','password2'),
 ('manager3','123'),
@@ -79,11 +79,11 @@ CREATE TABLE `patient` (
   `drugprice` decimal(10,2) DEFAULT NULL,
   `visitstate` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;v
 
 /*Data for the table `patient` */
 
-insert  into `patient`(`id`,`realname`,`gender`,`cardnumber`,`birthdate`,`age`,`homeaddress`,`deptname`,`doctorname`,`registlevel`,`isbook`,`registfee`,`registdate`,`diagiosis`,`prescription`,`drugprice`,`visitstate`) values 
+insert  into `patient`(`id`,`realname`,`gender`,`cardnumber`,`birthdate`,`age`,`homeaddress`,`deptname`,`doctorname`,`registlevel`,`isbook`,`registfee`,`registdate`,`diagiosis`,`prescription`,`drugprice`,`visitstate`) values
 (1,'张三','Male','123456789012345678','1980-01-01',44,'北京市海淀区','内科','李医生','普通',1,20.00,'2024-06-01','感冒','感冒药;退烧药',50.00,1),
 (2,'李四','Female','234567890123456789','1990-02-02',34,'上海市浦东新区','外科','王医生','专家',0,50.00,'2024-06-02','骨折','止痛药;抗生素',100.00,2),
 (3,'王五','Male','345678901234567890','1975-03-03',49,'广州市天河区','儿科','张医生','主任医师',1,30.00,'2024-06-03','过敏','抗过敏药',60.00,3),

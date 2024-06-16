@@ -91,11 +91,13 @@ public class ControllerPatience {
 
 
     }
+
+    /**
+     * 查询并且回显
+     * @param event
+     */
     @FXML//查询按钮
     void onCheckButton(ActionEvent event) {
-        /**
-         * 查询修改
-         */
         // 获取用户输入的病历号
         String patientNumber = PatienceNumber.getText();
 
@@ -132,6 +134,7 @@ public class ControllerPatience {
             MedicineList.setText("");
             MedicalCertificate.setText("");
             System.out.println("未找到该患者");
+
         }
     }
 }
