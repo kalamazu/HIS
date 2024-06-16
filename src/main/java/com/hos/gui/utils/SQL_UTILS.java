@@ -82,7 +82,8 @@ public class SQL_UTILS {
 
 
     /**
-     * 添加病人
+     * 添加病人/挂号
+     * @param patient
      */
     public void createPatient(Patient patient) {
         try {
@@ -154,7 +155,7 @@ public class SQL_UTILS {
     }
 
     /**
-     * 改
+     * 修改/更新病人信息
      * @param patient
      */
     public void updatePatient(Patient patient) {
@@ -185,10 +186,10 @@ public class SQL_UTILS {
     }
 
     /**
-     * 删
+     * 删除病人
+     * 备用方法
      * @param id
      */
-
     public void deletePatientById(int id) {
         try {
             String sql = "DELETE FROM patient WHERE id = ?";
@@ -272,7 +273,11 @@ public class SQL_UTILS {
         return false;
     }
 
-//正则表达式校验
+    /**
+     * 验证用户名合理性
+     * @param username
+     * @return
+     */
     public boolean isValidUsername(String username) {
         // 用户名只能包含字母、数字和下划线
         String usernameRegex = "^[a-zA-Z0-9_]+$";
@@ -281,6 +286,11 @@ public class SQL_UTILS {
         return matcher.matches();
     }
 
+    /**
+     * 验证密码合理性
+     * @param password
+     * @return
+     */
     public boolean isValidPassword(String password) {
         //可以包含字母、数字和特殊字符
         String passwordRegex = "^[a-zA-Z0-9!@#$%^&*()_+=\\\\-{}\\\\[\\\\]:;\\\"'<>,.?/]+$";
@@ -324,6 +334,7 @@ public class SQL_UTILS {
 
     /**
      * 删除管理员
+     * 备用方法
      * @param id
      */
     public void deleteManagerById(String id) {
