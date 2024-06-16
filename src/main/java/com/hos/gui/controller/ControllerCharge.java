@@ -92,4 +92,5 @@ public class ControllerCharge {
     void checkDoctor(ActionEvent event) {
 
     }
+    //Test
 }
