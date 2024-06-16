@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83e45e2d-6daf-4fb3-8b02-ab5e2772663b" name="Changes" comment="返回医生集合方法更新">
+    <list default="true" id="83e45e2d-6daf-4fb3-8b02-ab5e2772663b" name="Changes" comment="finally check doctor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hos/gui/Test/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hos/gui/Test/test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hos/gui/controller/ControllerCharge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hos/gui/controller/ControllerCharge.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +51,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.HelloApplication.executor": "Debug",
+    "Application.HelloApplication.executor": "Run",
     "Application.test.executor": "Run",
     "JUnit.test.testSQLreturn.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -259,7 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718548931700</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="finally check doctor">
+      <option name="closed" value="true" />
+      <created>1718552925907</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1718552925907</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,17 +295,7 @@
     <MESSAGE value="按照科室查询医生" />
     <MESSAGE value="删除service" />
     <MESSAGE value="返回医生集合方法更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="返回医生集合方法更新" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hos/gui/controller/ControllerCharge.java</url>
-          <line>148</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="finally check doctor" />
+    <option name="LAST_COMMIT_MESSAGE" value="finally check doctor" />
   </component>
 </project>

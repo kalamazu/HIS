@@ -11,6 +11,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -107,7 +109,31 @@ public class ControllerCharge implements Initializable {
 //挂号按钮
     void onRegisterButton(ActionEvent event) {
 
-        SQL_UTILS.getInstance().updatePatient(patient);
+        SQL_UTILS.getInstance().createPatient(patient);
+        Double fee = patient.getRegistfee();
+
+        Image image = new Image("/scanme.jpg");
+
+        ImageView imageView = new ImageView(image);
+/*        imageView.setFitWidth(3000);
+        imageView.setFitHeight(2000);*/
+        imageView.setPreserveRatio(true);
+
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeight(1124);
+        alert.setWidth(824);
+        alert.setTitle("图片弹出窗口");
+        alert.setHeaderText(null);
+        alert.setGraphic(imageView);
+
+
+        alert.showAndWait();
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+
+
     }
 
     @Override
@@ -152,7 +178,7 @@ public class ControllerCharge implements Initializable {
             Doctor.getItems().addAll("没有此类医生");
         else {
 
-            for (int i = 0; i <= doctors.size(); i++) {
+            for (int i = 0; i < doctors.size(); i++) {
                 com.hos.gui.entity.Doctor s = doctors.get(i);
                 Doctor.getItems().add(s.getRealname());
             }
