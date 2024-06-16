@@ -155,6 +155,51 @@ public class SQL_UTILS {
     }
 
     /**
+     * id查询
+     * @param id
+     * @return
+     */
+    public Patient getPatientById(String id) {
+        try {
+            String sql = "SELECT * FROM patient WHERE id = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, id);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                Patient patient = new Patient();
+                patient.setId(rs.getInt("id"));
+                patient.setRealname(rs.getString("realname"));
+                patient.setGender(rs.getString("gender"));
+                patient.setCardnumber(rs.getString("cardnumber"));
+                patient.setBirthdate(rs.getString("birthdate"));
+                patient.setAge(rs.getInt("age"));
+                patient.setHomeaddress(rs.getString("homeaddress"));
+                patient.setDeptname(rs.getString("deptname"));
+                patient.setDoctorname(rs.getString("doctorname"));
+                patient.setRegistlevel(rs.getString("registlevel"));
+                patient.setIsbook(rs.getBoolean("isbook"));
+                patient.setRegistfee(rs.getDouble("registfee"));
+                patient.setRegistdate(rs.getString("registdate"));
+                patient.setDiagiosis(rs.getString("diagiosis"));
+                patient.setPrescription(rs.getString("prescription"));
+                patient.setDrugprice(rs.getDouble("drugprice"));
+                patient.setVisitstate(rs.getInt("visitstate"));
+
+                return patient;
+            } else {
+                return null;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+
+
+
+
+    /**
      * 修改/更新病人信息
      * @param patient
      */
