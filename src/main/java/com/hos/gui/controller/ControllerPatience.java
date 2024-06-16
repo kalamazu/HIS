@@ -101,6 +101,9 @@ public class ControllerPatience {
         SQL_UTILS sqlUtils = SQL_UTILS.getInstance();
         sqlUtils.updatePatient(patient);
 
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+
     }
 
     /**
@@ -128,7 +131,7 @@ public class ControllerPatience {
             Doctor.setText(patient.getDoctorname());
             Level.setText(patient.getRegistlevel());
             Time.setText(patient.getRegistdate());
-            TotalFee.setText(String.valueOf(patient.getRegistfee()));
+            TotalFee.setText(String.valueOf(patient.getDrugprice()));
             MedicineList.setText(patient.getPrescription());
             MedicalCertificate.setText(patient.getDiagiosis());
         } else {
