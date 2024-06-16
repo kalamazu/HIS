@@ -298,7 +298,7 @@ public class SQL_UTILS {
     }
 
     /**
-     * 按照科室查询
+     * 按照科室查询，返回一个集合
      * @param dep
      * @return
      */
