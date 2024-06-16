@@ -24,14 +24,17 @@ public class SQL_UTILS {
     private String database_url;
     private static SQL_UTILS instance; // 单例模式
 
+    /**
+     * 数据库配置信息
+     */
     private SQL_UTILS() {
+        //根据实际情况填写
         this.user = "root";
         this.password = "chenyinan";
-        this.database_url = "localhost";jdbc:mysql://localhost:3306/his?useSSL=false&serverTimezone=Asia/Shanghai
-        //127.0.0.1
-        //这里填写127.0.0.1或者localhost都是可以的
-        this.database_name = "HIS";
-        //小写也可以
+        this.database_url = "localhost";
+        //完整url
+        //jdbc:mysql://localhost:3306/his?useSSL=false&serverTimezone=Asia/Shanghai
+        this.database_name = "his";
     }
 
     // 单例
