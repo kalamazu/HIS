@@ -47,13 +47,13 @@
                </font>
             </Label>
             <TextField fx:id="PatienceNumber" layoutX="98.0" layoutY="85.0" />
-            <Button fx:id="Check" layoutX="326.0" layoutY="84.0" mnemonicParsing="false" text="查询" />
+            <Button fx:id="Check" layoutX="326.0" layoutY="84.0" mnemonicParsing="false" onAction="#onCheckButton" text="查询" />
             <Label layoutX="25.0" layoutY="172.0" prefHeight="28.0" prefWidth="78.0" text="药品信息" textFill="#75ff8c">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="Save" layoutX="508.0" layoutY="463.0" mnemonicParsing="false" text="发药" />
+            <Button fx:id="Save" layoutX="508.0" layoutY="463.0" mnemonicParsing="false" onAction="#onConfirmButton" text="发药" />
             <AnchorPane fx:id="Pane" layoutX="4.0" onMouseDragged="#onMouseDraggedForMove" onMousePressed="#onMousePressedForMove" prefHeight="52.0" prefWidth="612.0" style="-fx-background-color: gray;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <Label layoutX="8.0" layoutY="6.0" prefHeight="40.0" prefWidth="90.0" text="药房发药" textFill="#ff6161">

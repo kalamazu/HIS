@@ -41,10 +41,7 @@ public class Controller {
     @FXML
     private TextField UserName;
 
-    @FXML
-    private void initialize(){
 
-    }
 
     @FXML
     private void Close(ActionEvent event) {

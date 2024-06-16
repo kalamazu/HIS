@@ -80,4 +80,14 @@ public class ControllerPatience {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
     }
+
+    @FXML//查询按钮
+    void onSaveButton(ActionEvent event) {
+
+    }
+    @FXML//保存按钮
+    void onCheckButton(ActionEvent event) {
+
+    }
+
 }

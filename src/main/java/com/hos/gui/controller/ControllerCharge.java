@@ -91,6 +91,9 @@ public class ControllerCharge {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
     }
+    @FXML//挂号按钮
+    void onRegisterButton(ActionEvent event) {
 
+    }
 
 }

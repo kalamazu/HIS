@@ -65,4 +65,13 @@ public class ControllerMedicine {
         stage.close();
     }
 
+    @FXML//查询按钮
+    void onCheckButton(ActionEvent event) {
+
+    }
+    @FXML//确认发药按钮
+    void onConfirmButton(ActionEvent event) {
+
+    }
+
 }
