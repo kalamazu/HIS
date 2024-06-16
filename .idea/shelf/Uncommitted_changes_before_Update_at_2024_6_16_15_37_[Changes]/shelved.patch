@@ -1,0 +1,92 @@
+Index: src/main/java/com/hos/gui/controller/ControllerPatience.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.hos.gui.controller;\r\n\r\nimport com.hos.gui.entity.Patient;\r\nimport com.hos.gui.utils.SQL_UTILS;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXML;\r\nimport javafx.scene.Node;\r\nimport javafx.scene.control.Button;\r\nimport javafx.scene.control.Label;\r\nimport javafx.scene.control.TextField;\r\nimport javafx.scene.input.MouseEvent;\r\nimport javafx.scene.layout.AnchorPane;\r\nimport javafx.stage.Stage;\r\n\r\npublic class ControllerPatience {\r\n    private double xOffset = 0;\r\n    private double yOffset = 0;\r\n    @FXML\r\n    private AnchorPane Pane;\r\n    @FXML\r\n    private Label Age;\r\n\r\n    @FXML\r\n    private Button Check;\r\n\r\n    @FXML\r\n    private Button Close;\r\n\r\n    @FXML\r\n    private Label Doctor;\r\n\r\n    @FXML\r\n    private Label Gender;\r\n\r\n    @FXML\r\n    private Label IDNumber;\r\n\r\n    @FXML\r\n    private Label Level;\r\n\r\n    @FXML\r\n    private TextField MedicalCertificate;\r\n\r\n    @FXML\r\n    private TextField MedicineList;\r\n\r\n    @FXML\r\n    private Label Name;\r\n\r\n    @FXML\r\n    private TextField PatienceNumber;\r\n\r\n    @FXML\r\n    private Label Room;\r\n\r\n    @FXML\r\n    private Button Save;\r\n\r\n    @FXML\r\n    private Label Time;\r\n\r\n    @FXML\r\n    private TextField TotalFee;\r\n    @FXML\r\n    private void onMousePressedForMove(MouseEvent event) {\r\n\r\n        xOffset = event.getSceneX();\r\n        yOffset = event.getSceneY();\r\n    }\r\n\r\n    @FXML\r\n    private void onMouseDraggedForMove(MouseEvent event) {\r\n\r\n        Stage stage = (Stage) Pane.getScene().getWindow();\r\n\r\n        stage.setX(event.getScreenX() - xOffset);\r\n        stage.setY(event.getScreenY() - yOffset);\r\n    }\r\n\r\n    @FXML\r\n    void Close(ActionEvent event) {\r\n        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();\r\n        stage.close();\r\n    }\r\n\r\n    @FXML//保存按钮\r\n    void onSaveButton(ActionEvent event) {\r\n        /**\r\n         * 保存到数据库中\r\n         */\r\n\r\n\r\n    }\r\n    @FXML//查询按钮\r\n    void onCheckButton(ActionEvent event) {\r\n        /**\r\n         * 查询修改\r\n         */\r\n        // 获取用户输入的病历号\r\n        String patientNumber = PatienceNumber.getText();\r\n\r\n        // 查询数据库，获取患者信息\r\n        Patient patient = SQL_UTILS.getInstance().getPatientByName(PatienceNumber.getText());\r\n\r\n        // 打印患者信息到控制台\r\n        System.out.println(patient);\r\n\r\n        // 更新界面上的Label\r\n        if (patient != null) {\r\n            Room.setText(patient.getDeptname());\r\n            Name.setText(patient.getDeptname());\r\n            Age.setText(String.valueOf(patient.getAge()));\r\n            Gender.setText(patient.getGender());\r\n            IDNumber.setText(String.valueOf(patient.getId()));\r\n        } else {\r\n            // 如果未找到患者，清空相应的Label\r\n            Room.setText(\"\");\r\n            Name.setText(\"\");\r\n            Age.setText(\"\");\r\n            Gender.setText(\"\");\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/hos/gui/controller/ControllerPatience.java b/src/main/java/com/hos/gui/controller/ControllerPatience.java
+--- a/src/main/java/com/hos/gui/controller/ControllerPatience.java	(revision b97a60fc9273c603cb93e79a4d279be103561a40)
++++ b/src/main/java/com/hos/gui/controller/ControllerPatience.java	(date 1718523455152)
+@@ -100,7 +100,7 @@
+         String patientNumber = PatienceNumber.getText();
+ 
+         // 查询数据库，获取患者信息
+-        Patient patient = SQL_UTILS.getInstance().getPatientByName(PatienceNumber.getText());
++        Patient patient = SQL_UTILS.getInstance().getPatientById(PatienceNumber.getText());
+ 
+         // 打印患者信息到控制台
+         System.out.println(patient);
+@@ -108,10 +108,10 @@
+         // 更新界面上的Label
+         if (patient != null) {
+             Room.setText(patient.getDeptname());
+-            Name.setText(patient.getDeptname());
++            Name.setText(patient.getRealname());
+             Age.setText(String.valueOf(patient.getAge()));
+             Gender.setText(patient.getGender());
+-            IDNumber.setText(String.valueOf(patient.getId()));
++            IDNumber.setText(patient.getCardnumber());
+         } else {
+             // 如果未找到患者，清空相应的Label
+             Room.setText("");
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"83e45e2d-6daf-4fb3-8b02-ab5e2772663b\" name=\"Changes\" comment=\"renamed\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHomeTypeForPersistence\" value=\"WRAPPER\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 0\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2hopPZz49hE54UjnflFPFA19rgS\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\r\n    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"HelloApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.hos.gui.HelloApplication\" />\r\n      <module name=\"player_1\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.hos.gui.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.HelloApplication\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"83e45e2d-6daf-4fb3-8b02-ab5e2772663b\" name=\"Changes\" comment=\"\" />\r\n      <created>1718270262006</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1718270262006</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"first commit\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1718288082230</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1718288082230</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"second commit\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1718332702575</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1718332702575</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"second commit\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1718510518851</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1718510518851</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"second commit\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1718515083886</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1718515083886</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"second commit\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1718515526014</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1718515526014</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"second commit\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1718515855574</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1718515855574</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"second commit\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1718516003885</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1718516003885</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"manager register\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1718521211220</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1718521211220</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"manager register and lose\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1718521318497</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1718521318497</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"renamed\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1718521751254</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1718521751254</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"11\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"first commit\" />\r\n    <MESSAGE value=\"second commit\" />\r\n    <MESSAGE value=\"manager register\" />\r\n    <MESSAGE value=\"manager register and lose\" />\r\n    <MESSAGE value=\"renamed\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"renamed\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision b97a60fc9273c603cb93e79a4d279be103561a40)
++++ b/.idea/workspace.xml	(date 1718523455243)
+@@ -4,7 +4,10 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="83e45e2d-6daf-4fb3-8b02-ab5e2772663b" name="Changes" comment="renamed" />
++    <list default="true" id="83e45e2d-6daf-4fb3-8b02-ab5e2772663b" name="Changes" comment="second commit">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/hos/gui/controller/ControllerPatience.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hos/gui/controller/ControllerPatience.java" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -57,7 +60,7 @@
+     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
++    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+   }
+ }</component>
+   <component name="RunManager">
+@@ -74,11 +77,6 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <recent_temporary>
+-      <list>
+-        <item itemvalue="Application.HelloApplication" />
+-      </list>
+-    </recent_temporary>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+@@ -192,4 +190,15 @@
+     <MESSAGE value="renamed" />
+     <option name="LAST_COMMIT_MESSAGE" value="renamed" />
+   </component>
++  <component name="XDebuggerManager">
++    <breakpoint-manager>
++      <breakpoints>
++        <line-breakpoint enabled="true" type="java-line">
++          <url>file://$PROJECT_DIR$/src/main/java/com/hos/gui/controller/ControllerPatience.java</url>
++          <line>14</line>
++          <option name="timeStamp" value="2" />
++        </line-breakpoint>
++      </breakpoints>
++    </breakpoint-manager>
++  </component>
+ </project>
+\ No newline at end of file
