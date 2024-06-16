@@ -42,6 +42,8 @@ public class Controller {
     @FXML
     private TextField UserName;
 
+    @FXML
+    private Label message;
 
 
     @FXML

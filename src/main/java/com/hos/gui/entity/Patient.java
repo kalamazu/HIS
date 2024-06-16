@@ -33,6 +33,7 @@ public class Patient {
     private Double drugprice;		//药品总价
     private int visitstate;		//看诊状态（1:已挂号，2.看诊结束，3已取药，4.已退号）
 
+
     /*public Patient() {
 
     }
