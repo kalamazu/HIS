@@ -1,5 +1,6 @@
 package com.hos.gui.controller;
 
+import com.hos.gui.entity.Doctor;
 import com.hos.gui.entity.Patient;
 import com.hos.gui.utils.SQL_UTILS;
 import javafx.event.ActionEvent;
@@ -16,11 +17,14 @@ import javafx.stage.Stage;
 
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class ControllerCharge implements Initializable {
     private double xOffset = 0;
     private double yOffset = 0;
+
+    private Patient patient = new Patient();
 
     @FXML
     private AnchorPane Pane;
@@ -102,39 +106,6 @@ public class ControllerCharge implements Initializable {
     @FXML
 //挂号按钮
     void onRegisterButton(ActionEvent event) {
-        Patient patient = new Patient();
-        patient.setAge((Integer.parseInt(Age.getText())));//年龄
-        if(GenderFemale.isSelected())
-           patient.setGender("Female");
-        else if(GenderMale.isSelected())
-            patient.setGender("Male"); //性别
-        patient.setHomeaddress(HomeAddress.getText());
-        //住址
-        patient.setRealname(Name.getText());
-        //病人姓名
-        patient.setId((Integer.parseInt(PatienceNumber.getText())));
-        //病例号
-        patient.setCardnumber(IdNumber.getText());
-        //身份证号
-        patient.setRegistfee(Double.parseDouble(ActuallyCharge.getText()));
-        //实付费用
-        patient.setIsbook(MedicalHistoryBook.isSelected());
-        //病历本
-        patient.setRegistdate(Time.getValue().toString());
-        //挂号日期
-        patient.setBirthdate(BirthDate.getValue().toString());
-        //生日
-        patient.setDeptname(Room.getValue());
-        //科室
-        patient.setRegistlevel(NumberInLine.getValue());
-        //号别
-
-
-//        if(MedicalHistoryBook.isSelected()){
-//            ShouldCharge.setText(SQL_UTILS.getInstance().getDoctorByName(Doctor.getValue()).getRegistfee().toString() + 10);//应付金额
-//        }else{
-//            ShouldCharge.setText(SQL_UTILS.getInstance().getDoctorByName(Doctor.getValue()).getRegistfee().toString());//应付金额
-//        }
 
         SQL_UTILS.getInstance().updatePatient(patient);
     }
@@ -148,15 +119,46 @@ public class ControllerCharge implements Initializable {
 
     @FXML
     void checkDoctor(ActionEvent event) {
-        if(SQL_UTILS.getInstance().getDoctorsByDep(Room.getValue(),NumberInLine.getValue())==null)
-            Doctor.getItems().addAll("没有");
-        else
-            for (Object s: SQL_UTILS.getInstance().getDoctorsByDep(Room.getValue(),NumberInLine.getValue())) {
-            Doctor.getItems().addAll(s.toString());
+
+        patient.setAge((Integer.parseInt(Age.getText())));//年龄
+        if(GenderFemale.isSelected())
+            patient.setGender("Female");
+        else if(GenderMale.isSelected())
+            patient.setGender("Male"); //性别
+        patient.setHomeaddress(HomeAddress.getText());
+        //住址
+        patient.setRealname(Name.getText());
+        //病人姓名
+        patient.setId((Integer.parseInt(PatienceNumber.getText())));
+        //病例号
+        patient.setCardnumber(IdNumber.getText());
+        //身份证号
+/*        patient.setRegistfee(Double.parseDouble(ActuallyCharge.getText()));
+        //实付费用*/
+        patient.setIsbook(MedicalHistoryBook.isSelected());
+        //病历本
+        patient.setRegistdate(Time.getValue().toString());
+        //挂号日期
+        patient.setBirthdate(BirthDate.getValue().toString());
+        //生日
+        patient.setDeptname(Room.getValue());
+        //科室
+        patient.setRegistlevel(NumberInLine.getValue());
+        //号别
+
+        List<Doctor> doctors = SQL_UTILS.getInstance().getDoctorsByDep(Room.getValue(), NumberInLine.getValue());
+
+        if(doctors == null)
+            Doctor.getItems().addAll("没有此类医生");
+        else {
+
+            for (int i = 0; i <= doctors.size(); i++) {
+                com.hos.gui.entity.Doctor s = doctors.get(i);
+                Doctor.getItems().add(s.getRealname());
+            }
         }
-        Patient patient=SQL_UTILS.getInstance().getPatientById(PatienceNumber.getText());
+
         patient.setDoctorname(Doctor.getValue());//挂号医生
-        SQL_UTILS.getInstance().updatePatient(patient);
     }
     //Test
 }
