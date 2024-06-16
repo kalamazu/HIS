@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83e45e2d-6daf-4fb3-8b02-ab5e2772663b" name="Changes" comment="second commit">
+    <list default="true" id="83e45e2d-6daf-4fb3-8b02-ab5e2772663b" name="Changes" comment="manager register and lose">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hos/gui/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hos/gui/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hos/gui/controller/ControllerRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hos/gui/controller/ControllerRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hos/gui/entity/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hos/gui/entity/Doctor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hos/gui/entity/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hos/gui/entity/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hos/gui/entity/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hos/gui/entity/Patient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hos/gui/utils/SQL_UTILS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hos/gui/utils/SQL_UTILS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hos/gui/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/hos/gui/Login.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +148,23 @@
       <option name="project" value="LOCAL" />
       <updated>1718516003885</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="manager register">
+      <option name="closed" value="true" />
+      <created>1718521211220</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1718521211220</updated>
+    </task>
+    <task id="LOCAL-00009" summary="manager register and lose">
+      <option name="closed" value="true" />
+      <created>1718521318497</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1718521318497</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -171,6 +182,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="first commit" />
     <MESSAGE value="second commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="second commit" />
+    <MESSAGE value="manager register" />
+    <MESSAGE value="manager register and lose" />
+    <option name="LAST_COMMIT_MESSAGE" value="manager register and lose" />
   </component>
 </project>
