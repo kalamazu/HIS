@@ -34,7 +34,6 @@ public class test {
         for (Doctor doctor : doctors) {
             System.out.println(doctor);
         }
-
     }
 
     public static void main(String[] args) {

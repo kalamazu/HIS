@@ -326,6 +326,30 @@ public class SQL_UTILS {
     }
 
 
+    public Doctor getDoctorByName(String name) {
+        try {
+            String sql = "SELECT * FROM doctor WHERE realname = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, name);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                Doctor doctor = new Doctor();
+                doctor.setId(rs.getString("id"));
+                doctor.setRealname(rs.getString("realname"));
+                doctor.setDeptname(rs.getString("deptname"));
+                doctor.setRegistlevel(rs.getString("registlevel"));
+                doctor.setRegistfee(rs.getDouble("registfee"));
+                return doctor;
+            } else {
+                return null;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+
 
     /**
      * 管理员登录
