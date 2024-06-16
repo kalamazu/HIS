@@ -2,6 +2,7 @@ package com.hos.gui.controller;
 
 
 
+import com.hos.gui.utils.SQL_UTILS;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -77,28 +78,37 @@ public class Controller {
     public void openOptionWindows(ActionEvent event){
 
      /**
-      * 登录校验
+      * 登录校
       */
+     if(SQL_UTILS.getInstance().Login(UserName.getText(), Password.getText())) {
 
-     try {
-         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/hos/gui/Main.fxml"));
-         ControllerOption controller=new ControllerOption();
-         loader.setController(controller);
-         StackPane root = loader.load();
-         Scene secondWindowScene = new Scene(root);
 
-         Stage secondWindowStage = new Stage();
-         secondWindowStage.setScene(secondWindowScene);
-         secondWindowStage.initStyle(StageStyle.UNDECORATED);
-         secondWindowStage.show();
+         try {
+             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/hos/gui/Main.fxml"));
+             ControllerOption controller = new ControllerOption();
+             loader.setController(controller);
+             StackPane root = loader.load();
+             Scene secondWindowScene = new Scene(root);
 
-         Stage mainWindowStage = (Stage) login.getScene().getWindow();
+             Stage secondWindowStage = new Stage();
+             secondWindowStage.setScene(secondWindowScene);
+             secondWindowStage.initStyle(StageStyle.UNDECORATED);
+             secondWindowStage.show();
 
-         mainWindowStage.close();
-     } catch (IOException e) {
-         e.printStackTrace();
+             Stage mainWindowStage = (Stage) login.getScene().getWindow();
+
+             mainWindowStage.close();
+         } catch (IOException e) {
+             e.printStackTrace();
+
+         }
+     }
+     else{
+         UserName.setText("");
+         Password.setText("");
 
      }
+
 
  }
 }
