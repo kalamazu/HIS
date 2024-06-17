@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83e45e2d-6daf-4fb3-8b02-ab5e2772663b" name="Changes" comment="返回医生集合方法更新">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hos/gui/controller/ControllerMedicine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hos/gui/controller/ControllerMedicine.java" afterDir="false" />
-    </list>
+    <list default="true" id="83e45e2d-6daf-4fb3-8b02-ab5e2772663b" name="Changes" comment="返回医生集合方法更新" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -247,7 +245,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718536221837</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="返回医生集合方法更新">
+      <option name="closed" value="true" />
+      <created>1718548931700</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1718548931700</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -53,7 +53,7 @@ public class test {
 /*        Doctor doctor = new Doctor();
         doctor.setId("1");
         SQL_UTILS.getInstance().updateDoctor(doctor);*/
-        List<Doctor> doctors = SQL_UTILS.getInstance().getDoctorsByDep("儿科","副主任医师");
+        List<Doctor> doctors = SQL_UTILS.getInstance().getDoctorsByDep("骨科","主任医师");
         for (Doctor doctor : doctors) {
             System.out.println(doctor);
         }
