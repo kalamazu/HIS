@@ -122,8 +122,8 @@ public class ControllerMedicine {
 
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setHeight(1124);
-        alert.setWidth(824);
+        alert.setHeight(224.8);
+        alert.setWidth(164.8);
         alert.setTitle("图片弹出窗口");
         alert.setHeaderText(null);
         alert.setGraphic(imageView);

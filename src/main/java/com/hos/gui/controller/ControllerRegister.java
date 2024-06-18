@@ -63,11 +63,22 @@ public class ControllerRegister {
         @FXML
         void register(ActionEvent event) {
 
-            if(Password.getText().equals(RePassword.getText()) && SQL_UTILS.getInstance().isValidPassword(Password.getText()) && SQL_UTILS.getInstance().isValidPassword(UserName.getText())){
+            Boolean maksure = SQL_UTILS.getInstance().isExistManager(UserName.getText());
+
+
+
+            if(Password.getText().equals(RePassword.getText())
+                    && SQL_UTILS.getInstance().isValidPassword(Password.getText())
+                    && SQL_UTILS.getInstance().isValidUsername(UserName.getText()) && !maksure){
                 Manager manager = new Manager(UserName.getText(), Password.getText());
                 SQL_UTILS.getInstance().createManager(manager);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.close();
             }else{
-                if (!(SQL_UTILS.getInstance().isValidPassword(Password.getText()))) {
+                if(maksure){
+                    message.setText("用户已经存在");
+                }
+                else if(!(SQL_UTILS.getInstance().isValidPassword(Password.getText()))) {
                     message.setText("密码非法,密码可以包含字母、数字和特殊字符");
                 }
                 else if(!(SQL_UTILS.getInstance().isValidPassword(UserName.getText()))){
@@ -76,9 +87,10 @@ public class ControllerRegister {
                 else if(!(Password.getText().equals(RePassword.getText()))){
                     message.setText("两次密码不一致");
                 }
+                UserName.setText("");
+                Password.setText("");
+                RePassword.setText("");
             }
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.close();
         }
     }
 

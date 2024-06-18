@@ -92,7 +92,10 @@ public class SQL_UTILS {
      */
     public void createPatient(Patient patient) {
         try {
-            String sql = "INSERT INTO patient (realname, gender, cardnumber, birthdate, age, homeaddress, deptname, doctorname, registlevel, isbook, registfee, registdate, diagiosis, prescription, drugprice, visitstate,id ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO patient (realname, gender, cardnumber, birthdate, age, homeaddress, " +
+                    "deptname, doctorname, registlevel, isbook, registfee, registdate, " +
+                    "diagiosis, prescription, drugprice, visitstate,id ) VALUES " +
+                    "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, patient.getRealname());
             pstmt.setString(2, patient.getGender());
@@ -373,6 +376,27 @@ public class SQL_UTILS {
         }
         return false;
     }
+
+    public boolean isExistManager(String managerid){
+
+        try {
+            //med  表中通过id查询密码与用户输入进行对比，即登陆验证
+            String sql = "SELECT * FROM manager WHERE id = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, managerid);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                if(managerid.equals(rs.getString("id")))
+                    return true;
+            } else {
+                return false;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return false;
+    }
+
 
     /**
      * 验证用户名合理性

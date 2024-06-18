@@ -80,7 +80,9 @@ public class Controller {
      /**
       * 登录校验
       */
-     if(SQL_UTILS.getInstance().Login(UserName.getText(), Password.getText()) && SQL_UTILS.getInstance().isValidPassword(Password.getText()) && SQL_UTILS.getInstance().isValidPassword(UserName.getText())) {
+     if(SQL_UTILS.getInstance().Login(UserName.getText(), Password.getText())
+             && SQL_UTILS.getInstance().isValidPassword(Password.getText())
+             && SQL_UTILS.getInstance().isValidUsername(UserName.getText())) {
 
 
          try {

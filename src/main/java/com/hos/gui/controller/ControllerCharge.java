@@ -115,14 +115,14 @@ public class ControllerCharge implements Initializable {
         Image image = new Image("/scanme.jpg");
 
         ImageView imageView = new ImageView(image);
-/*        imageView.setFitWidth(3000);
-        imageView.setFitHeight(2000);*/
+/*        imageView.setFitWidth(224.8);
+        imageView.setFitHeight(164.8);*/
         imageView.setPreserveRatio(true);
 
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setHeight(1124);
-        alert.setWidth(824);
+        alert.setHeight(224.8);
+        alert.setWidth(164.8);
         alert.setTitle("图片弹出窗口");
         alert.setHeaderText(null);
         alert.setGraphic(imageView);
